@@ -1,3 +1,3 @@
-class Company < ApplicationController
+class Company < ApplicationRecord
 
-end 
+end
