@@ -4,20 +4,20 @@ Rails.application.routes.draw do
   get '/', to: 'welcome#index'
 
   # Index (User story 1)
-  get '/wargames', to: 'wargames#index'
+  get '/countries', to: 'countries#index'
   get '/boardgames', to: 'boardgames#index'
 
   # Specific parent in index
-  get '/wargames/:id', to: 'wargames#show'
+  get '/countries/:id', to: 'countries#show'
   get '/boardgames/:id', to: 'boardgames#show'
 
-  get '/warrooms', to: 'warrooms#index'
+  get '/countries', to: 'countries#index'
   get '/boardgames', to: 'boardgames#index'
 
-  get '/wargames/:id', to: 'wargames#show'
+  get '/countries/:id', to: 'countries#show'
   get '/boardgames/:id', to: 'boardgames#show'
 
-  get '/wargames/:id/warrooms', to: 'wargames#index'
+  get '/countries/:id/warrooms', to: 'countries#index'
   get '/boardgames/:id/boardgames', to: 'boardgames#index'
 
 end
