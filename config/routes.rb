@@ -5,11 +5,11 @@ Rails.application.routes.draw do
 
   # Index (User story 1)
   get '/wargames', to: 'wargames#index'
-  get '/boardgames', to: 'boardgames#index'
+  get '/companies', to: 'companies#index'
 
   # Specific parent in index
-  get '/wargames/:id', to: 'wargames#show'
-  get '/boardgames/:id', to: 'boardgames#show'
+    get '/wargames/:id', to: 'wargames#show'
+  get '/companies/:id', to: 'companies#show'
 
   get '/warrooms', to: 'warrooms#index'
   get '/boardgames', to: 'boardgames#index'
@@ -18,6 +18,6 @@ Rails.application.routes.draw do
   get '/boardgames/:id', to: 'boardgames#show'
 
   get '/wargames/:id/warrooms', to: 'wargames#index'
-  get '/boardgames/:id/boardgames', to: 'boardgames#index'
+  get '/companies/:id/boardgames', to: 'boardgames#index'
 
 end
