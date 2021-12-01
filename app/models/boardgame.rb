@@ -1,3 +1,3 @@
 class Boardgame < ApplicationRecord
-
-end 
+  belongs_to :company
+end
