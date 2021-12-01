@@ -1,0 +1,4 @@
+<h1> All Board Game Companies </h1>
+<% @boardgames.each do |boardgame| %>
+  <h3> <a href="/boardgames/<%= boardgame.id %>"><%= boardgame.name %></a></h3>
+<% end %>
