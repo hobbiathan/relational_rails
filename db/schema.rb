@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_30_210436) do
+ActiveRecord::Schema.define(version: 2021_11_30_221418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "boardgames", force: :cascade do |t|
+    t.string "name"
+    t.integer "rank"
+    t.boolean "out_of_print"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.bigint "companies_id"
+    t.index ["companies_id"], name: "index_boardgames_on_companies_id"
+  end
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
@@ -23,4 +33,5 @@ ActiveRecord::Schema.define(version: 2021_11_30_210436) do
     t.integer "games_listed"
   end
 
+  add_foreign_key "boardgames", "companies", column: "companies_id"
 end
