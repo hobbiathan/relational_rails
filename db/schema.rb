@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_30_221418) do
+ActiveRecord::Schema.define(version: 2021_12_02_005230) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,19 +19,17 @@ ActiveRecord::Schema.define(version: 2021_11_30_221418) do
     t.string "name"
     t.integer "rank"
     t.boolean "out_of_print"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.bigint "companies_id"
-    t.index ["companies_id"], name: "index_boardgames_on_companies_id"
+    t.bigint "company_id"
+    t.index ["company_id"], name: "index_boardgames_on_company_id"
   end
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
-    t.boolean "active"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.integer "games_listed"
+    t.boolean "independent"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "boardgames", "companies", column: "companies_id"
+  add_foreign_key "boardgames", "companies"
 end
