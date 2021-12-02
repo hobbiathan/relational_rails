@@ -1,6 +1,7 @@
 class CountriesController < ApplicationController
   def index
-    @countries = Country.all
+    @countries = Country.desc_order
+    #binding.pry
   end
 
   def show
