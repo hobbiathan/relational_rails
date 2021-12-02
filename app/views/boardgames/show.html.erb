@@ -1,0 +1,11 @@
+<a href="/boardgames">Boarg Games Index</a>
+
+<h1><%= @boardgame.name %></h1>
+
+<p>Sold out:<%= @boardgame.out_of_print %></p>
+<p>Rank:<%= @boardgame.rank %></p>
+
+
+<a href="/companies/<%= @boardgame.id %>/edit">Edit</a>
+
+<p><a href = "/boardgames"> List of all boardgames</a></p>

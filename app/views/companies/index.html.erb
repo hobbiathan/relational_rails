@@ -1,6 +1,11 @@
 <h1> All Board Game Companies </h1>
-<% @companies.each do |company| %>
-  <h3> <a href="/companies/<%= company.id %>"><%= company.name %></a></h3>
-<% end %>
+<div class="companies-list"><% @companies.each do |company| %>
+  <h3>
+    <a href= <%= company_url(company) %>>
+      <%= company.name %>
+    </a>
+  </h3>
+  <% end %>
+</div>
 <!-- #Header Company.name
 #<ul> company.updated -->

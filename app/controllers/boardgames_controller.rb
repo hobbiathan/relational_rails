@@ -4,6 +4,7 @@ class BoardgamesController < ApplicationController
  end
 
  def show
-   @boardgame = Boardgame.find(params[:id]) 
+   
+   @boardgame = Boardgame.find(params[:id])
  end
 end

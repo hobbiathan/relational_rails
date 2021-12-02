@@ -1,0 +1,3 @@
+<% @boardgames.each do |boardgame| %>
+    <%= link_to boardgame.name, "/boardgames/#{boardgame.id}" %>
+  <% end %>
