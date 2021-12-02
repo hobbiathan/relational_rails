@@ -1,19 +1,13 @@
 <h4>
-  <a href="/countries/<%= @current_country.id %>">
-    Return to <%=@current_country.country_name%>
-  </a>
+  <%= link_to "Return to #{@current_country.country_name}", "/countries/#{@current_country.id}" %>
 </h4>
 
 <h4>
-  <a href="/countries/<%= @current_country.id %>/warrooms">
-    Return to <%=@current_country.country_name%> Warrooms
-  </a>
+  <%= link_to "Return to #{@current_country.country_name} Warrooms lol", "/countries/#{@current_country.id}/warrooms" %>
 </h4>
 
 <h4>
-  <a href="/warrooms">
-    Return to All Warrooms
-  </a>
+  <%= link_to "Return to All Warrooms", "/warrooms" %> 
 </h4>
 
 <h1><%=@warroom.warroom_name%></h1>
