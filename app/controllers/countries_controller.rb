@@ -17,7 +17,11 @@ class CountriesController < ApplicationController
     @warrooms = @current_country.warrooms
   end
 
+  # same thing as above
   def child_warroom
-
+    #binding.pry
+    @current_country = Country.find(params[:id])
+    @warroom = Warroom.find(params[:warroom_id])
+    #binding.pry
   end
 end
