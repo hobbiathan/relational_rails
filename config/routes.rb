@@ -5,19 +5,8 @@ Rails.application.routes.draw do
 
   # Index (User story 1)
   get '/countries', to: 'countries#index'
-  get '/boardgames', to: 'boardgames#index'
-
-  # Specific parent in index
   get '/countries/:id', to: 'countries#show'
-  get '/boardgames/:id', to: 'boardgames#show'
-
-  get '/countries', to: 'countries#index'
-  get '/boardgames', to: 'boardgames#index'
-
-  get '/countries/:id', to: 'countries#show'
-  get '/boardgames/:id', to: 'boardgames#show'
-
   get '/countries/:id/warrooms', to: 'countries#index'
-  get '/boardgames/:id/boardgames', to: 'boardgames#index'
+
 
 end
