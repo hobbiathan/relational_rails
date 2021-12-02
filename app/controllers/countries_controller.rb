@@ -1,9 +1,9 @@
 class CountriesController < ApplicationController
   def index
-    @countries = ["United States of America", "Russian Federation", "People's Republic of China"]
+    @countries = Country.all
   end
 
   def show
-
+    @current_country = Country.find(params[:id])
   end
 end
