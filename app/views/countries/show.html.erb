@@ -1,4 +1,17 @@
 <a href="/countries">Countries Index</a>
 
 <h1> <%= @current_country.country_name %> </h1>
-<p>relevant children</p>
+
+<h3>
+   <a href="/countries/<%=@current_country.id%>/warrooms">
+    All Country Warrooms
+  </a>
+</h3>
+
+<% @warrooms.each do |warroom| %>
+  <h4>
+    <a href="/countries/<%=warroom.country_id%>/warrooms/<%=warroom.id%>">
+      <%= warroom.warroom_name %>
+    </a>
+  </h4>
+<% end %>
