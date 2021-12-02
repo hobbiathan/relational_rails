@@ -1,0 +1,20 @@
+<h4>
+  <a href="/countries">
+    Return to Countries
+  </a>
+</h4>
+
+<h1>All Warrooms</h1>
+
+<% @warrooms.each do |warroom| %>
+
+  <h2><a href="/countries/<%=warroom.country_id%>/warrooms/<%=warroom.id%>"><%=warroom.warroom_name%></a><h2>
+    <h3>Warroom ID: <%=warroom.id%></h3>
+    <h3>Warroom Strategic Importance: <%=warroom.strategic_importance%></h3>
+    <h3>Warroom Contains Deadman's Switch: <%=warroom.deadman_switch%></h3>
+    <h3>Warroom Contains WMDs: <%=warroom.contains_wmd%></h3>
+    <h3>Warroom Created At: <%=warroom.created_at%></h3>
+    <h3>Warroom Updated At: <%=warroom.updated_at%></h3>
+    <h3>Warroom Country ID: <a href="/countries/<%=warroom.country_id%>"><%=warroom.country_id%></a></h3>
+
+<% end %>
