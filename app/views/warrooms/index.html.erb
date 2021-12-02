@@ -1,7 +1,5 @@
 <h4>
-  <a href="/countries">
-    Return to Countries
-  </a>
+  <%= link_to "Return to Countries", "/countries" %>
 </h4>
 
 <h1>All Warrooms</h1>
@@ -15,6 +13,6 @@
     <h3>Warroom Contains WMDs: <%=warroom.contains_wmd%></h3>
     <h3>Warroom Created At: <%=warroom.created_at%></h3>
     <h3>Warroom Updated At: <%=warroom.updated_at%></h3>
-    <h3>Warroom Country ID: <a href="/countries/<%=warroom.country_id%>"><%=warroom.country_id%></a></h3>
+    <h3>Warroom Country ID: <%= link_to "#{warroom.country_id}", "/countries/#{warroom.country_id}"%></h3>
 
 <% end %>
