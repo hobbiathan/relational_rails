@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/countries', to: 'countries#index'
   get '/countries/:id', to: 'countries#show'
   get '/countries/:id/warrooms', to: 'countries#warrooms'
-  get '/countres/:id/warrooms/:warroom_id', to: 'countries#child_warroom'
+  get '/countries/:id/warrooms/:warroom_id', to: 'countries#child_warroom'
 
 
 end
