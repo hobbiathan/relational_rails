@@ -1,0 +1,22 @@
+<h3>
+  <a href="/countries/<%= @current_country.id %>">
+    Return to <%=@current_country.country_name%>
+  </a>
+</h3>
+
+<h3>
+  <a href="/countries/<%= @current_country.id %>/warrooms">
+    Return to <%=@current_country.country_name%> Warrooms
+  </a>
+</h3>
+
+<h1><%=@warroom.warroom_name%></h1>
+
+<h2>Strategic Importance</h2>
+<h3><%=@warroom.strategic_importance%>/5</h3>
+
+<h2>Contains Deadman's Switch:</h2>
+<h3><%=@warroom.deadman_switch%></h3>
+
+<h2>Contains WMDs:</h2>
+<h3><%=@warroom.contains_wmd%></h3>
