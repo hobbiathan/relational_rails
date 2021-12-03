@@ -4,6 +4,8 @@ class CreateBoardgames < ActiveRecord::Migration[5.2]
       t.string :name
       t.integer :rank
       t.boolean :out_of_print
+
+      t.timestamps
     end
   end
 end

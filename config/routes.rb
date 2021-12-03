@@ -20,4 +20,6 @@ Rails.application.routes.draw do
   get '/wargames/:id/warrooms', to: 'wargames#index'
   get '/companies/:company_id/boardgames', to: 'company_boardgames#index'
 
+  get '/companies/new', to: 'companies#new'
+  post '/companies', to: 'companies#create'
 end

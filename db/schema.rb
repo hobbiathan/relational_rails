@@ -19,13 +19,15 @@ ActiveRecord::Schema.define(version: 2021_12_02_005230) do
     t.string "name"
     t.integer "rank"
     t.boolean "out_of_print"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.bigint "company_id"
     t.index ["company_id"], name: "index_boardgames_on_company_id"
   end
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
-    t.integer "games_listed"
+    t.integer "games_invented"
     t.boolean "independent"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
