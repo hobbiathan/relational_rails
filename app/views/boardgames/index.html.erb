@@ -1,5 +1,14 @@
-<h1> All Board Game Companies </h1>
+<div class = "boardgames-list">
+<h1> Boardgames List </h1>
 <% @boardgames.each do |boardgame| %>
-  <h3> <a href="/boardgames/<%= boardgame.id %>"><%= boardgame.name %></a></h3>
-  <p>company.name</p>
+  <h3>
+    <a href="/boardgames/<%= boardgame.id %>">
+      <%= boardgame.name %></a>
+  </h3>
+  <p>Rank: <%= boardgame.rank %></p>
+  <p>Out of Print: <%= boardgame.out_of_print %></p>
+  <p>Created on: <%= boardgame.created_at.httpdate %></p>
+  <p>Updated on: <%= boardgame.updated_at.httpdate %></p>
+
 <% end %>
+</div>

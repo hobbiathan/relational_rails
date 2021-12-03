@@ -1,10 +1,16 @@
-<a href="/companies">Boarg Game Company Index</a>
+<p class = "boardgames"><a href="/boardgames">Board Games Link</a></p>
+<p class = "company-index"><a href="/companies">Company Index</a></p>
+
+<a href="/companies">Board Game Company Index</a>
 
 <h1><%= @company.name %></h1>
-
-<p>Independent:<%= @company.independent %></p>
-<p>Number Of Games:<%= @company.games_listed %></p>
-
+<div class = "company-show">
+<p>Independent: <%= @company.independent %></p>
+<p>Number Of Games Invented: <%= @company.games_invented %></p>
+<p>Created on: <%= @company.created_at.httpdate %></p>
+<p>Updated on: <%= @company.updated_at.httpdate %></p>
+<p>Total Board Games in Database: <%= @company.boardgame_count %></p>
+</div>
 <a href="/companies/<%= @company.id %>/edit">Edit</a>
 
-<p><a href = "/boardgames"> List of all boardgames</a></p>
+<!-- <p><a href = "/boardgames"> List of all boardgames</a></p> -->

@@ -1,11 +1,14 @@
+<p class = "boardgames"><a href ="/boardgames">Board Games Link</p>
 <h1> All Board Game Companies </h1>
-<div class="companies-list"><% @companies.each do |company| %>
+
+<div class="companies-list"><% @companies.most_recent.each do |company| %>
   <h3>
     <a href= <%= company_url(company) %>>
       <%= company.name %>
-    </a>
+    </a>Created At: <%= company.created_at.httpdate %>
   </h3>
   <% end %>
 </div>
+<p class= "new-company"><a href='/companies/new'>Add New Company</a></p>
 <!-- #Header Company.name
 #<ul> company.updated -->

@@ -1,12 +1,4 @@
 require 'rails_helper'
-
-
-
-# User Story 5, Parent Children Index (x2)
-#
-# As a visitor
-# When I visit '/parents/:parent_id/child_table_name'
-# Then I see each Child that is associated with that Parent with each Child's attributes:
 RSpec.describe 'Companies boardgames index' do
   before :each do
     @riogrande = Company.create!(name: "Rio Grande")
@@ -14,6 +6,7 @@ RSpec.describe 'Companies boardgames index' do
     @catan = @riogrande.boardgames.create!(name: 'Catan')
   end
   it 'shows all the boardgames for the artist' do
+    #user story 5
     visit "/companies/#{@riogrande.id}/boardgames"
     # within '.boardgames-list' do
     expect(page).to have_content(@puerto.name)
@@ -27,7 +20,7 @@ RSpec.describe 'Companies boardgames index' do
 
     # within '.boardgames-list' do
       expect(current_path).to eq("/boardgames/#{@puerto.id}")
-      save_and_open_page
+      
     end
 
 end

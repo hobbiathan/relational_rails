@@ -1,11 +1,14 @@
 <a href="/boardgames">Boarg Games Index</a>
-
+<div class = "boardgames-list">
 <h1><%= @boardgame.name %></h1>
 
-<p>Sold out:<%= @boardgame.out_of_print %></p>
+<p>Out of print:<%= @boardgame.out_of_print %></p>
 <p>Rank:<%= @boardgame.rank %></p>
 
+<p>created on:<%= @boardgame.created_at.httpdate %></p>
+<p>updated on:<%= @boardgame.updated_at.httpdate %></p>
 
+</div>
 <a href="/companies/<%= @boardgame.id %>/edit">Edit</a>
 
 <p><a href = "/boardgames"> List of all boardgames</a></p>
