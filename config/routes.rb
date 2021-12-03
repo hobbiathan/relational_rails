@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get '/wargames', to: 'wargames#index'
   get '/companies', to: 'companies#index'
 
+  get '/companies/new', to: 'companies#new'
+  post '/companies', to: 'companies#create'
   # Specific parent in index
     get '/wargames/:id', to: 'wargames#show'
   get '/companies/:id', to: 'companies#show', as: :company
@@ -20,6 +22,5 @@ Rails.application.routes.draw do
   get '/wargames/:id/warrooms', to: 'wargames#index'
   get '/companies/:company_id/boardgames', to: 'company_boardgames#index'
 
-  get '/companies/new', to: 'companies#new'
-  post '/companies', to: 'companies#create'
+
 end
