@@ -26,6 +26,7 @@ end
         expect(page).to have_link(company_2.name, href: company_url(company_2))
       end
     end
+
   it 'links to boardgames path' do
     #user story 8
     @riogrande = Company.create!(name: "Rio Grande", games_invented: 63, independent: false)

@@ -29,6 +29,17 @@ RSpec.describe 'the company show page' do
       expect(page).to have_link('Board Games Link', href: '/boardgames')
     end
   end
+  it 'links to the company childs index ' do
+    #user story 10
+    @riogrande = Company.create!(name: "Rio Grande", games_invented: 3, independent: false)
+    @puerto = @riogrande.boardgames.create!(name: 'Puerto Rico', rank: 13, out_of_print: false)
+    @catan = @riogrande.boardgames.create!(name: 'Catan', rank: 7, out_of_print: false)
+    visit "/companies/#{@riogrande.id}"
+      within '.child-games' do
+
+      expect(page).to have_link("#{@riogrande.name}'s boardgames", href: "/companies/#{@riogrande.id}/boardgames")
+    end
+  end
   it 'links to company index path' do
     #user story 9
     @riogrande = Company.create!(name: "Rio Grande", games_invented: 63, independent: false)

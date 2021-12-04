@@ -19,7 +19,7 @@ class CompaniesController < ApplicationController
       games_invented: params[:games_invented],
       independent: params[:independent]
       })
-      company.save
+      
       redirect_to '/companies'
   end
 
