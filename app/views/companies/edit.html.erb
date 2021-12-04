@@ -1,0 +1,12 @@
+<%= form_with  url: "/companies/#{@company.id}", method: :patch, local: true, :class => 'new-company'  do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :games_invented %>
+  <%= f.text_field :games_invented %>
+  <%= f.label :independent %>
+  <%= f.select :independent, options_for_select([true,false])%>
+
+  <p><%= f.submit "Submit Update" %></p>
+
+
+<% end %>

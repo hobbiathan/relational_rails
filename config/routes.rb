@@ -10,9 +10,10 @@ Rails.application.routes.draw do
   get '/companies/new', to: 'companies#new'
   post '/companies', to: 'companies#create'
   # Specific parent in index
-    get '/wargames/:id', to: 'wargames#show'
+  get '/wargames/:id', to: 'wargames#show'
   get '/companies/:id', to: 'companies#show', as: :company
-
+  get '/companies/:id/edit', to: 'companies#edit'
+  patch '/companies/:id', to: 'companies#update'
   get '/warrooms', to: 'warrooms#index'
   get '/boardgames', to: 'boardgames#index'
 

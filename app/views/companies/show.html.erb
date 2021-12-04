@@ -12,8 +12,8 @@
 <p>Total Board Games in Database: <%= @company.boardgame_count %></p>
 </div>
 
+<p class= "parent-edit"><a href="/companies/<%= @company.id %>/edit">Update Company</a></p>
 <p class="child-games"><a href="/companies/<%= @company.id %>/boardgames"><%= @company.name%>'s boardgames</a><p>
 
-<a href="/companies/<%= @company.id %>/edit">Edit</a>
 
 <!-- <p><a href = "/boardgames"> List of all boardgames</a></p> -->
