@@ -1,0 +1,12 @@
+<%= form_with model: @boardgame, url: "/companies/#{@company.id}/boardgames", method: :post, local: true, :class => 'new-boardgame'  do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :rank %>
+  <%= f.text_field :rank %>
+  <%= f.label :out_of_print %>
+  <%= f.select :out_of_print, options_for_select([true,false])%>
+
+  <p><%= f.submit "Add New Board Game" %></p>
+
+
+<% end %>

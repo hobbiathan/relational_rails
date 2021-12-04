@@ -1,3 +1,4 @@
 <% @boardgames.each do |boardgame| %>
     <%= link_to boardgame.name, "/boardgames/#{boardgame.id}" %>
-  <% end %>
+<% end %>
+<%= link_to "Add New Board Game", "/companies/#{@company.id}/boardgames/new" %>
