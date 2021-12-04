@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get '/companies/:id', to: 'companies#show', as: :company
   get '/companies/:id/edit', to: 'companies#edit'
   patch '/companies/:id', to: 'companies#update'
+  delete '/companies/:id', to: 'companies#destroy'
   get '/warrooms', to: 'warrooms#index'
   get '/boardgames', to: 'boardgames#index'
 

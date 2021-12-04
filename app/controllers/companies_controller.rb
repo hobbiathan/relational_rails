@@ -29,7 +29,13 @@ class CompaniesController < ApplicationController
     redirect_to "/companies/#{@company.id}"
   end
 
-private 
+  def destroy
+    company = Company.find(params[:id])
+    company.destroy
+    redirect_to '/companies'
+  end
+
+private
   def companies_params
     params.permit(:name, :games_invented, :independent)
   end
