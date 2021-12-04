@@ -19,6 +19,12 @@ class CountriesController < ApplicationController
   end
 
   # same thing as above
+  # does this follow that one thing that says information shouldn't be accessible
+  # from foreign parents?
+
+  # probably not
+
+
   def child_warroom
     #binding.pry
     @current_country = Country.find(params[:id])
