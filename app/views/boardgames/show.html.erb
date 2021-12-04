@@ -9,6 +9,7 @@
 <p>updated on:<%= @boardgame.updated_at.httpdate %></p>
 
 </div>
-<a href="/companies/<%= @boardgame.id %>/edit">Edit</a>
+<%= link_to "Update Board Game", "#{@boardgame.id}/edit" %>
+
 
 <p><a href = "/boardgames"> List of all boardgames</a></p>

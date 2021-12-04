@@ -1,0 +1,13 @@
+
+<%= form_with url: "/boardgames/#{@boardgame.id}", method: :patch, local: true, :class => 'update-company'  do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :rank %>
+  <%= f.text_field :rank %>
+  <%= f.label :out_of_print %>
+  <%= f.select :out_of_print, options_for_select([true,false])%>
+
+  <p><%= f.submit "Submit Update" %></p>
+
+
+<% end %>
