@@ -37,6 +37,7 @@ end
       select(:true, from: :independent )
 
     click_button 'Create Company'
+  
     expect(Company.all).to eq([])
   end
 end
