@@ -9,7 +9,7 @@ RSpec.describe 'the boardgames index page', type: :feature do
 
     visit "/boardgames"
     within '.boardgames-list' do
-    save_and_open_page
+
     expect(page).to have_content(boardgame.name)
     expect(page).to have_content(boardgame_2.name)
     expect(page).to have_content(boardgame.rank)
@@ -20,17 +20,6 @@ RSpec.describe 'the boardgames index page', type: :feature do
     expect(page).to have_content(boardgame_2.created_at.httpdate)
     expect(page).to have_content(boardgame.updated_at.httpdate)
     expect(page).to have_content(boardgame_2.updated_at.httpdate)
-  end
-end
-  xit 'lists all boardgame paths' do
-
-
-    visit "/boardgames"
-    within '.boardgames-list' do
-
-    expect(page).to have_link(boardgame.name, href: boardgame_url(boardgame))
-    expect(page).to have_link(boardgame_2.name, href: boardgame_url(boardgame_2))
-
     end
   end
 end

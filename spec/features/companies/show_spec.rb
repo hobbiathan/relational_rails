@@ -25,7 +25,7 @@ RSpec.describe 'the company show page' do
     @puerto = @riogrande.boardgames.create!(name: 'Puerto Rico', rank: 13, out_of_print: false)
     visit "/companies/#{@riogrande.id}"
     within '.boardgames' do
-      save_and_open_page
+      
       expect(page).to have_link('Board Games Link', href: '/boardgames')
     end
   end

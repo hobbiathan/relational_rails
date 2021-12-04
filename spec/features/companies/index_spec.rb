@@ -44,7 +44,7 @@ end
     @puerto = @riogrande.boardgames.create!(name: 'Puerto Rico', rank: 13, out_of_print: false)
     visit "/companies"
     within '.new-company' do
-    save_and_open_page
+    
 
     expect(page).to have_link('Add New Company', href: '/companies/new')
     end
