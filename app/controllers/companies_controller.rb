@@ -14,13 +14,14 @@ class CompaniesController < ApplicationController
   # end
 
   def create
-    company = Company.create({
-      name: params[:name],
-      games_invented: params[:games_invented],
-      independent: params[:independent]
-      })
-      
+    company = Company.create(companies_params)
+
       redirect_to '/companies'
   end
+
+  def companies_params
+    params.permit(:name, :games_invented, :independent)
+  end
+
 
 end
