@@ -5,7 +5,7 @@
   <h3>
     <a href= <%= company_url(company) %>>
       <%= company.name %>
-      <%= link_to "Edit #{company.name}", "/companies/#{company.id}/edit" %>
+      <%= link_to "Edit", "/companies/#{company.id}/edit", id: "edit"%>
   </h3>
   </a>Created At: <%= company.created_at.httpdate %>
   <% end %>
