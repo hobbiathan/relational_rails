@@ -7,9 +7,11 @@ Rails.application.routes.draw do
   get '/warrooms', to: 'warrooms#index'
   get '/warrooms/:id', to: 'warrooms#show'
 
+  # Note: Order of routes matters!
+
   get '/countries', to: 'countries#index'
-  get '/countries/:id', to: 'countries#show'
   get '/countries/new', to: 'countries#new'
+  get '/countries/:id', to: 'countries#show'
   get '/countries/:id/edit', to: 'countries#edit'
 
   get '/countries/:id/warrooms', to: 'country_warrooms#index'
