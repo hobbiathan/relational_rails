@@ -1,0 +1,31 @@
+<form action="/countries" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <p> Enter a new Country name: </p>
+  <input type='text' name='CountryName'/><br/>
+
+  <p> Select country military power rank (5 being the greatest, 1 being the weakest): </p>
+
+  <input type="radio" name="MilitaryPowerRank">
+  <label for="MilitaryPowerRank">1</label><br>
+
+  <input type="radio" name="MilitaryPowerRank">
+  <label for="MilitaryPowerRank">2</label><br>
+
+  <input type="radio" name="MilitaryPowerRank">
+  <label for="MilitaryPowerRank">3</label><br>
+  <input type="radio" name="MilitaryPowerRank">
+  <label for="MilitaryPowerRank">4</label><br>
+  <input type="radio" name="MilitaryPowerRank">
+  <label for="MilitaryPowerRank">5</label><br>
+
+  <p> Is the country a nuclear power: </p>
+
+  <input type="radio" name="NuclearPower">
+  <label for="javascript">True</label><br>
+  <input type="radio" name="NuclearPower">
+  <label for="javascript">False</label><br>
+
+  <input type='submit'/>
+
+</form>
