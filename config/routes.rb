@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   # Index (User story 1)
   get '/warrooms', to: 'warrooms#index'
+  get '/warrooms/:id', to: 'warrooms#show'
   get '/countries', to: 'countries#index'
   get '/countries/:id', to: 'countries#show'
   get '/countries/:id/warrooms', to: 'countries#warrooms'
