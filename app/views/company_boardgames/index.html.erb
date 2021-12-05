@@ -1,4 +1,7 @@
 <% @boardgames.each do |boardgame| %>
-    <%= link_to boardgame.name, "/boardgames/#{boardgame.id}" %>
+    <p><%= link_to boardgame.name, "/boardgames/#{boardgame.id}", id: "list" %></p>
 <% end %>
 <%= link_to "Add New Board Game", "/companies/#{@company.id}/boardgames/new" %>
+<p>Alphabetize:
+<%= link_to "Alphabetize", "?order=name"%>
+</p>

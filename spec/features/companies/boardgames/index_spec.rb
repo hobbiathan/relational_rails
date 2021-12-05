@@ -15,12 +15,21 @@ RSpec.describe 'Companies boardgames index' do
   it 'links to each boardgames show page' do
     visit "/companies/#{@riogrande.id}/boardgames"
 
-
-    click_on @puerto.name
-
-    # within '.boardgames-list' do
+    # within '#the' do
+      click_on @puerto.name
       expect(current_path).to eq("/boardgames/#{@puerto.id}")
+    end
+  describe '#alphabetizes the index page' do
+   it 'has an alphabetize button' do
+     visit "/companies/#{@riogrande.id}/boardgames"
+     expected = ['Catan', 'Puerto Rico']
+    # within '#the' do
+      click_link "Alphabetize"
+      save_and_open_page
+      expect(current_path).to eq("/companies/#{@riogrande.id}/boardgames")
+      expect(page.find_all('#list').map(&:text)).to eq(expected)
+
 
     end
-
+  end
 end

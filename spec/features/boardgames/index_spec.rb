@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'the boardgames index page', type: :feature do
-  it 'lists all the boardgames and attributes' do
+  xit 'lists all the boardgames and attributes' do
     #user story 3
     company = Company.create!(name: 'Riogrande', independent: false, games_invented: 150)
     boardgame = company.boardgames.create!(name: 'Puerto Rico', rank: 35, out_of_print: false)
@@ -22,4 +22,16 @@ RSpec.describe 'the boardgames index page', type: :feature do
     expect(page).to have_content(boardgame_2.updated_at.httpdate)
     end
   end
+    it 'shows only true records of out_of_print' do
+      @riogrande = Company.create!(name: "Rio Grande", games_invented: 3, independent: false)
+      @puerto = @riogrande.boardgames.create!(name: 'Puerto Rico', rank: 13, out_of_print: false)
+      @catan = @riogrande.boardgames.create!(name: 'Catan', rank: 7, out_of_print: false)
+      @cephalofair = Company.create!(name: "Cephalofair", games_invented: 18, independent: true)
+      @gloomhaven = @cephalofair.boardgames.create!(name: 'Gloomhaven', rank: 239, out_of_print: true)
+      @forge = @cephalofair.boardgames.create!(name: 'Forgwar', rank: 89, out_of_print: false)
+      visit '/boardgames'
+      expect(@riogrande).should belong_to(:company)
+      expect(page).to have_content(@gloomhaven.name)
+      expect(page).to_not have_content(@catan.name)
+    end
 end

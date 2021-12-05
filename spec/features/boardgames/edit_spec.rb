@@ -15,6 +15,7 @@ RSpec.describe 'Update boardgame with new Data' do
   it 'links to the edit page' do
     @riogrande = Company.create!(name: "Rio Grande", games_invented: 3, independent: false)
     @puerto = @riogrande.boardgames.create!(name: 'Puerto Rico', rank: 13, out_of_print: false)
+    
     visit "/boardgames/#{@puerto.id}"
 
 

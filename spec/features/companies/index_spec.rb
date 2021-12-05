@@ -44,7 +44,7 @@ end
     @puerto = @riogrande.boardgames.create!(name: 'Puerto Rico', rank: 13, out_of_print: false)
     visit "/companies"
     within '.new-company' do
-    
+
 
     expect(page).to have_link('Add New Company', href: '/companies/new')
     end
@@ -60,6 +60,20 @@ end
     expect(page).to have_content(@emperors.created_at.httpdate)
     expect(page).to have_content(@cephalofair.created_at.httpdate)
 
+    end
+  end
+  it 'has an edit button next to every compnay' do
+    @riogrande = Company.create!(name: "Rio Grande", games_invented: 42, independent: false)
+    @emperors = Company.create!(name: "Emperors of Eternal Evil", games_invented: 11, independent: true)
+    @cephalofair = Company.create!(name: "Cephalofair", games_invented: 18, independent: true)
+    visit "/companies"
+    within '.companies-list' do
+
+    expect(page).to have_link("Edit #{@riogrande.name}", href: "/companies/#{@riogrande.id}/edit")
+    expect(page).to have_link("Edit #{@emperors.name}", href: "/companies/#{@emperors.id}/edit")
+    expect(page).to have_link("Edit #{@cephalofair.name}", href: "/companies/#{@cephalofair.id}/edit")
+    click_on "Edit #{@riogrande.name}"
+    expect(current_path).to eq("/companies/#{@riogrande.id}/edit")
     end
   end
 end

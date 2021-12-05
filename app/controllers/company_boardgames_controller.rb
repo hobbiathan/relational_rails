@@ -2,6 +2,9 @@ class CompanyBoardgamesController < ApplicationController
   def index
     @company = Company.find(params[:company_id])
     @boardgames = @company.boardgames
+    if params[:order] == "name"
+      @boardgames = @boardgames.alphabetical
+   end
   end
   def new
     @company = Company.find(params[:company_id])

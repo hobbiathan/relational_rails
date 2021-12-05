@@ -1,6 +1,6 @@
 <div class = "boardgames-list">
 <h1> Boardgames List </h1>
-<% @boardgames.each do |boardgame| %>
+<% @boardgames.games_sold_out.each do |boardgame| %>
   <h3>
     <a href="/boardgames/<%= boardgame.id %>">
       <%= boardgame.name %></a>
