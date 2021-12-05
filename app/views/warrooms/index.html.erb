@@ -6,7 +6,7 @@
 
 <% @warrooms.each do |warroom| %>
 
-  <h2><a href="/countries/<%=warroom.country_id%>/warrooms/<%=warroom.id%>"><%=warroom.warroom_name%></a><h2>
+  <h2><a href="/warrooms/<%=warroom.id%>"><%=warroom.warroom_name%></a><h2>
     <h3>Warroom ID: <%=warroom.id%></h3>
     <h3>Warroom Strategic Importance: <%=warroom.strategic_importance%></h3>
     <h3>Warroom Contains Deadman's Switch: <%=warroom.deadman_switch%></h3>
