@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   get '/warrooms/:id', to: 'warrooms#show'
   get '/countries', to: 'countries#index'
   get '/countries/:id', to: 'countries#show'
-  get '/countries/:id/warrooms', to: 'countries#warrooms'
-  get '/countries/:id/warrooms/:warroom_id', to: 'countries#child_warroom'
+  get '/countries/:id/warrooms', to: 'country_warrooms#index'
+  get '/countries/:id/warrooms/:warroom_id', to: 'country_warrooms#show'
 
 
 end
