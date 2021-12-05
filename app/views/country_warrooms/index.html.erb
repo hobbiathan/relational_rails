@@ -1,0 +1,26 @@
+<h4>
+  <a href="/countries/<%= @current_country.id %>">
+    Return to Country
+  </a>
+</h4>
+
+<h1>
+<%=@current_country.country_name%> Warrooms
+<h1>
+
+<% @warrooms.each do |warroom| %>
+  <h4>
+    <a href="warrooms/<%=warroom.id%>">
+    <%= warroom.warroom_name %>
+    </a>
+  <h4>
+
+  <h5>Strategic Importance:</h5>
+  <h6><%=warroom.strategic_importance%>/5</h6>
+
+  <h5>Contains Deadman's Switch:</h5>
+  <h6><%=warroom.deadman_switch%><h6>
+
+  <h5>Contains WMDs:</h5>
+  <h6><%=warroom.contains_wmd%></h6>
+<% end %>
