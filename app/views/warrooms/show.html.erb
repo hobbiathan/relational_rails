@@ -1,0 +1,15 @@
+
+<h4>
+  <%= link_to "Return to All Warrooms", "/warrooms" %>
+</h4>
+
+<h1><%=@current_warroom.warroom_name%></h1>
+
+<h2>Strategic Importance</h2>
+<h3><%=@current_warroom.strategic_importance%>/5</h3>
+
+<h2>Contains Deadman's Switch:</h2>
+<h3><%=@current_warroom.deadman_switch%></h3>
+
+<h2>Contains WMDs:</h2>
+<h3><%=@current_warroom.contains_wmd%></h3>
