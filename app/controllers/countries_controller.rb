@@ -5,11 +5,12 @@ class CountriesController < ApplicationController
   end
 
   def show
-    #binding.pry
     @current_country = Country.find(params[:id])
-    #binding.pry
     @warrooms = @current_country.warrooms
-    #binding.pry
+  end
+
+  def new
+
   end
 
 end
