@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get '/boardgames/:id', to: 'boardgames#show'
   get '/boardgames/:id/edit', to: 'boardgames#edit'
   patch '/boardgames/:id', to: 'boardgames#update'
+  delete '/boardgames/:id', to: 'boardgames#destroy'
   get '/wargames/:id/warrooms', to: 'wargames#index'
   get '/companies/:company_id/boardgames', to: 'company_boardgames#index'
   get '/companies/:company_id/boardgames/new', to: 'company_boardgames#new'

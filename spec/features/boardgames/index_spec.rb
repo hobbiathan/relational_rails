@@ -30,8 +30,28 @@ RSpec.describe 'the boardgames index page', type: :feature do
       @gloomhaven = @cephalofair.boardgames.create!(name: 'Gloomhaven', rank: 239, out_of_print: true)
       @forge = @cephalofair.boardgames.create!(name: 'Forgwar', rank: 89, out_of_print: false)
       visit '/boardgames'
-      expect(@riogrande).should belong_to(:company)
+
       expect(page).to have_content(@gloomhaven.name)
       expect(page).to_not have_content(@catan.name)
     end
-end
+    describe '#links/buttons' do
+      it 'has an edit link next to every boardgame' do
+        @riogrande = Company.create!(name: "Rio Grande", games_invented: 3, independent: false)
+        @puerto = @riogrande.boardgames.create!(name: 'Puerto Rico', rank: 13, out_of_print: false)
+        @catan = @riogrande.boardgames.create!(name: 'Catan', rank: 7, out_of_print: false)
+        @cephalofair = Company.create!(name: "Cephalofair", games_invented: 18, independent: true)
+        @gloomhaven = @cephalofair.boardgames.create!(name: 'Gloomhaven', rank: 239, out_of_print: true)
+        @forge = @cephalofair.boardgames.create!(name: 'Forgwar', rank: 89, out_of_print: false)
+        visit "/boardgames"
+        within '.boardgames-list' do
+
+        expect(page).to have_link("Edit", href: "/boardgames/#{@gloomhaven.id}/edit")
+
+
+         first(:link, "Edit").click
+
+        expect(current_path).to eq("/boardgames/#{@gloomhaven.id}/edit")
+      end
+    end
+    end
+  end

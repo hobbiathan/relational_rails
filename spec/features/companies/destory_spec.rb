@@ -7,12 +7,12 @@
 # and I am redirected to the parent index page where I no longer see this parent
 require 'rails_helper'
 
-RSpec.describe 'destroying an artist' do
+RSpec.describe 'destroying an company' do
   it 'can delete the artist from the index page' do
     riogrande = Company.create!(name: "Riogrande")
     visit "/companies/#{riogrande.id}"
 
-    
+
     click_button 'Delete Company'
     expect(current_path).to eq('/companies')
     expect(page).to_not have_content(riogrande.name)
