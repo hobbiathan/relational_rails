@@ -1,7 +1,11 @@
-<% @boardgames.each do |boardgame| %>
-    <p><%= link_to boardgame.name, "/boardgames/#{boardgame.id}", id: "list" %></p>
-<% end %>
+<div class = "boardgames-list">
+  <% @boardgames.each do |boardgame| %>
+      <p><%= link_to boardgame.name, "/boardgames/#{boardgame.id}", id: "list" %></p>
+      <p><%= link_to "Edit", "/boardgames/#{boardgame.id}/edit", id: "edit" %></p>
+  <% end %>
+
 <%= link_to "Add New Board Game", "/companies/#{@company.id}/boardgames/new" %>
 <p>Alphabetize:
 <%= link_to "Alphabetize", "?order=name"%>
 </p>
+</div>

@@ -69,11 +69,13 @@ end
     visit "/companies"
     within '.companies-list' do
 
-    expect(page).to have_link("Edit #{@riogrande.name}", href: "/companies/#{@riogrande.id}/edit")
-    expect(page).to have_link("Edit #{@emperors.name}", href: "/companies/#{@emperors.id}/edit")
-    expect(page).to have_link("Edit #{@cephalofair.name}", href: "/companies/#{@cephalofair.id}/edit")
-    click_on "Edit #{@riogrande.name}"
-    expect(current_path).to eq("/companies/#{@riogrande.id}/edit")
+    expect(page).to have_link("Edit", href: "/companies/#{@riogrande.id}/edit")
+    expect(page).to have_link("Edit", href: "/companies/#{@emperors.id}/edit")
+    expect(page).to have_link("Edit", href: "/companies/#{@cephalofair.id}/edit")
+      find('#edit') do
+        first(:link, "Edit").click
+        expect(current_path).to eq("/companies/#{@cephalofair.id}/edit")
+      end
     end
   end
 end
