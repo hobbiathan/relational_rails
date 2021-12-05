@@ -17,6 +17,12 @@ class BoardgamesController < ApplicationController
     redirect_to "/boardgames/#{@boardgame.id}"
   end
 
+  def destroy
+    @boardgame = Boardgame.find(params[:id])
+    @boardgame.delete
+    redirect_to '/boardgames'
+  end
+
   def boardgames_params
     params.permit(:name, :rank, :out_of_print)
   end
