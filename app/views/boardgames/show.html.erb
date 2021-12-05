@@ -9,6 +9,7 @@
 <p>updated on:<%= @boardgame.updated_at.httpdate %></p>
 
 </div>
+<%= button_to "Delete Board Game", "#{@boardgame.id}", method: :delete %>
 <%= link_to "Update Board Game", "#{@boardgame.id}/edit" %>
 
 
