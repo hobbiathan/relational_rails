@@ -16,10 +16,7 @@ RSpec.describe 'countries' do
   end
 
   it 'Can display country and its relevant children' do
-
     visit "/countries/#{@country.id}"
-
-    #save_and_open_page
 
     expect(page).to have_content(@country.country_name)
     expect(page).to have_content(@wr.warroom_name)
@@ -27,12 +24,9 @@ RSpec.describe 'countries' do
 
     visit "/countries/#{@country_two.id}"
 
-    #save_and_open_page
-
     expect(page).to have_content(@country_two.country_name)
     expect(page).to have_content(@wr_2.warroom_name)
     expect(page).to have_content(@country_two.warrooms.count)
-
   end
 
 end
