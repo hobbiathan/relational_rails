@@ -7,6 +7,6 @@ RSpec.describe 'countries#new' do
 
     expect(page).to have_field("CountryName")
     expect(page).to have_field("MilitaryPowerRank")
-    expect(page).to have_filed("NuclearPower")
+    expect(page).to have_field("NuclearPower")
   end
 end
