@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'country_warrooms#' do
+RSpec.describe 'country_warrooms' do
 
   before(:each) do
     @country = Country.create!(military_power_rank: 5, country_name: "The Velviathan", nuclear_power: true)
