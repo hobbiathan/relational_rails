@@ -1,6 +1,6 @@
 class Company < ApplicationRecord
   validates :name, presence: true
-  has_many :boardgames
+  has_many :boardgames, dependent: :delete_all
 
   def self.most_recent
     order(created_at: :desc)

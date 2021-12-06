@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Company do
-  it {should have_many :boardgames}
+  # it {should have_many :boardgames}
   it { validate_presence_of(:name) }
+  it {should have_many(:boardgames).dependent(:delete_all) }
   #user story 6
   describe '#most_recent' do
     it 'lists the company in order of created_at date' do
