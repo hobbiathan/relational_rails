@@ -45,14 +45,17 @@ RSpec.describe 'the boardgames index page', type: :feature do
         visit "/boardgames"
         within '.boardgames-list' do
 
-        expect(page).to have_link("Edit", href: "/boardgames/#{@gloomhaven.id}/edit")
+          expect(page).to have_link("Edit", href: "/boardgames/#{@gloomhaven.id}/edit")
 
-         first(:link, "Edit").click
+          first(:link, "Edit").click
 
         expect(current_path).to eq("/boardgames/#{@gloomhaven.id}/edit")
-
-        
       end
+    end
+    it 'links to company index' do
+      visit "/boardgames"
+
+      expect(page).to have_link("Companies Home", href: '/companies')
     end
   end
 end
