@@ -26,7 +26,7 @@ RSpec.describe 'countries' do
   end
 
   it 'contains link to create new parent' do
-    expect(page).to have_link("New Parent", :href => "/countries/new")
+    expect(page).to have_link("Create Country", :href => "/countries/new")
   end
 
 end
