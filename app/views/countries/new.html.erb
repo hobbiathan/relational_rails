@@ -1,31 +1,14 @@
-<form action="/countries" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<%= form_with url: "/countries", method: 'POST', local: true do |form| %>
 
-  <p> Enter a new Country name: </p>
-  <input type='text' name='CountryName'/><br/>
+  <%= form.label :country_name %> <br>
+  <%= form.text_field :country_name %><br><br>
 
-  <p> Select country military power rank (5 being the greatest, 1 being the weakest): </p>
+  <%= form.label :military_power_rank %> <br>
+  <%= form.text_field :military_power_rank %><br><br>
 
-  <input type="radio" name="MilitaryPowerRank">
-  <label for="MilitaryPowerRank">1</label><br>
+  <%= form.label :nuclear_power %><br>
+  <%= form.text_field :nuclear_power %><br><br>
 
-  <input type="radio" name="MilitaryPowerRank">
-  <label for="MilitaryPowerRank">2</label><br>
+  <%= form.submit "Create Country"%>
 
-  <input type="radio" name="MilitaryPowerRank">
-  <label for="MilitaryPowerRank">3</label><br>
-  <input type="radio" name="MilitaryPowerRank">
-  <label for="MilitaryPowerRank">4</label><br>
-  <input type="radio" name="MilitaryPowerRank">
-  <label for="MilitaryPowerRank">5</label><br>
-
-  <p> Is the country a nuclear power: </p>
-
-  <input type="radio" name="NuclearPower">
-  <label for="javascript">True</label><br>
-  <input type="radio" name="NuclearPower">
-  <label for="javascript">False</label><br>
-
-  <input type='submit'/>
-
-</form>
+<% end %>
