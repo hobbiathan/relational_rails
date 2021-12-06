@@ -14,12 +14,11 @@ Rails.application.routes.draw do
   get '/countries/:id', to: 'countries#show'
   get '/countries/:id/edit', to: 'countries#edit'
 
+  post '/countries', to: 'countries#create'
+
   get '/countries/:id/warrooms', to: 'country_warrooms#index'
   get '/countries/:id/warrooms/:warroom_id', to: 'country_warrooms#show'
 
-  post '/countries', to: 'countries#create'
-
-  patch '/countries/:id', to: 'countries#update'
 
 
 end
