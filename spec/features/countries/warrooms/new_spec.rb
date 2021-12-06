@@ -6,9 +6,27 @@ RSpec.describe 'country_warrooms#new' do
   end
 
   it 'links to /new from /countries/:id' do
-    visit "/countries/#{@country.id}"
+    visit "/countries/#{@country.id}/warrooms"
 
     click_button("Create Warroom")
-    expect(current_path).to eq("/countries/#{@country.id}/new")
+    expect(current_path).to eq("/countries/#{@country.id}/warrooms/new")
+  end
+
+  it 'can create a new warroom tied to a specific country' do
+
+    visit "/countries/#{@country.id}/warrooms/new"
+
+    fill_in(:warroom_name, with: "Sector 2B")
+    fill_in(:strategic_importance, with: '5')
+    fill_in(:deadman_switch, with: "true")
+    fill_in(:contains_wmd, with: "false")
+
+    click_button('Create Warroom')
+
+    expect(current_path).to eq("/countries/#{@country.id}/warrooms")
+    expect(page).to have_content("Sector 2B")
+    expect(page).to have_content("5")
+    expect(page).to have_content("true")
+    expect(page).to have_content("false")
   end
 end
