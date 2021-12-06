@@ -1,12 +1,23 @@
 require 'rails_helper'
 
 RSpec.describe 'countries#new' do
+  it 'links to new page from artists#index' do
+    visit '/countries'
 
-  it 'shows proper field inputs' do
-    visit "/countries/new"
+    click_link("Create Country")
+    expect(current_path).to eq("/countries/new")
+  end
 
-    expect(page).to have_field("country_name")
-    expect(page).to have_field("military_power_rank")
-    expect(page).to have_field("nuclear_power")
+  it 'can create a new country' do
+    visit '/countries/new'
+
+    fill_in(:country_name, with: 'Switzerland')
+    fill_in(:military_power_rank, with: "2")
+    fill_in(:nuclear_power, with: "false")
+
+    click_button('Create Country')
+
+    expect(current_path).to eq("/countries")
+    expect(page).to have_content("Switzerland")
   end
 end
