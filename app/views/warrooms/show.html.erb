@@ -3,6 +3,10 @@
   <%= link_to "Return to All Warrooms", "/warrooms" %>
 </h4>
 
+<h4>
+  <%= button_to "Edit #{@current_warroom.warroom_name}", "/warrooms/#{@current_warroom.id}/edit", method: :get %>
+</h4>
+
 <h1><%=@current_warroom.warroom_name%></h1>
 
 <h2>Strategic Importance</h2>
