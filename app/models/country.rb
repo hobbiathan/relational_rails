@@ -2,7 +2,7 @@ class Country < ApplicationRecord
   has_many :warrooms
 
   def self.desc_order
-    order(created_at: :desc)
+    order(updated_at: :desc)
   end
 
   def child_count
