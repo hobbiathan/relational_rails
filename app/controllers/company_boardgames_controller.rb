@@ -16,6 +16,8 @@ class CompanyBoardgamesController < ApplicationController
     @company.boardgames.create(boardgames_params)
     redirect_to "/companies/#{@company.id}/boardgames"
   end
+private
+
   def boardgames_params
     params.permit(:name, :rank, :out_of_print)
   end

@@ -23,6 +23,7 @@ class BoardgamesController < ApplicationController
     redirect_to '/boardgames'
   end
 
+private 
   def boardgames_params
     params.permit(:name, :rank, :out_of_print)
   end
