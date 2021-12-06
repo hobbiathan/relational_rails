@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # Index (User story 1)
   get '/warrooms', to: 'warrooms#index'
   get '/warrooms/:id', to: 'warrooms#show'
+  get '/warrooms/:id/edit', to: 'warrooms#edit'
 
   # Note: Order of routes matters!
 
