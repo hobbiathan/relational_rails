@@ -26,7 +26,7 @@ RSpec.describe 'warrooms#edit' do
 
     #save_and_open_page
 
-    expect(current_path).to eq("/warrooms/#{@current_warroom.id}")
+    expect(current_path).to eq("/warrooms/#{@child_warroom.id}")
     expect(page).to have_content("Sector 2C")
     expect(page).to have_content("4")
     expect(page).to have_content("true")
