@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   post '/countries', to: 'countries#create'
   # Should be PATCH, doesn't make sense
-  put '/countries/:id', to: 'countries#update'
+  patch '/countries/:id', to: 'countries#update'
 
 
 
