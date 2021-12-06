@@ -6,7 +6,7 @@ RSpec.describe 'artist#edit' do
   end
 
   it 'links to the edit page' do
-    visit '/countries'
+    visit "/countries/#{@country.id}"
 
     click_button("Edit #{@country.country_name}")
 
@@ -20,11 +20,11 @@ RSpec.describe 'artist#edit' do
     fill_in(:nuclear_power, with: "false")
     fill_in(:military_power_rank, with: "5")
 
-    click_button('Update Country')
+    click_button("Update Country")
 
     save_and_open_page
 
-    expect(current_path).to eq('/countries')
+    expect(current_path).to eq("/countries/#{@country.id}")
     expect(page).to have_content("The Unified Hobbiathan State")
   end
 
