@@ -28,5 +28,7 @@ RSpec.describe 'country_warrooms#new' do
     expect(page).to have_content("5")
     expect(page).to have_content("true")
     expect(page).to have_content("false")
+
+    save_and_open_page
   end
 end
