@@ -11,7 +11,7 @@
 <% @countries.each do |country| %>
  <h3>
 
-   <%= link_to "#{country.country_name}", "/countries/#{country.id}" %> - Last Updated: <%= country.updated_at %>
+   <%= link_to "#{country.country_name}", "/countries/#{country.id}" %> - Creation Date: <%= country.created_at %>
 
  </h3>
 <% end %>
