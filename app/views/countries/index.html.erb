@@ -11,7 +11,8 @@
 <% @countries.each do |country| %>
  <h3>
 
-   <%= link_to "#{country.country_name}", "/countries/#{country.id}" %>
+   <%= link_to "#{country.country_name}", "/countries/#{country.id}" %><br>
+   <%= button_to "Edit #{country.country_name}", "/countries/#{country.id}/edit", method: :get %> <br><br>
 
  </h3>
 <% end %>
