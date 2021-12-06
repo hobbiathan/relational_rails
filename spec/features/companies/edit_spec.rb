@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe '#edit' do
+RSpec.describe '#edit', type: :feature do
   it 'links to the edit page' do
     riogrande = Company.create!(name: "Riogrande", games_invented: 293, independent: false)
 
@@ -36,5 +36,7 @@ RSpec.describe '#edit' do
 
       expect(current_path).to eq("/companies/#{riogrande.id}")
       expect(page).to have_content("Riogrande")
+      expect(page).to have_content(356)
+      expect(page).to have_content(false)
     end
   end
