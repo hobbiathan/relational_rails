@@ -16,11 +16,13 @@ Rails.application.routes.draw do
 
   post '/countries', to: 'countries#create'
 
-  patch '/countries/:id', to: 'countries#update'
+  put '/countries/:id', to: 'countries#update'
 
   get '/countries/:id/warrooms', to: 'country_warrooms#index'
   get '/countries/:id/warrooms/:warroom_id', to: 'country_warrooms#show'
 
+  post '/countries/:id/warrooms', to: 'country_warrooms#create'
 
+  patch '/countries/:id/warrooms/:warroom_id', to: 'country_warrooms#update'
 
 end
