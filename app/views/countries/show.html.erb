@@ -5,6 +5,8 @@
 
 <h1> <%= @current_country.country_name %> </h1>
 <h2> Total Warroom Count: <%=@current_country.child_count%></h2>
+<h2> Military Power Rank: <%=@current_country.military_power_rank%>/5</h2>
+<h2> Country is nuclear power: <%=@current_country.nuclear_power%></h2>
 
 <h3>
   <%= link_to "All Country Warrooms", "/countries/#{@current_country.id}/warrooms" %>
@@ -17,3 +19,5 @@
   </h4>
 
 <% end %>
+
+<%= button_to "Edit #{@current_country.country_name}", "/countries/#{@current_country.id}/edit", method: :get %> <br><br>
