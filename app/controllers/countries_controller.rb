@@ -27,7 +27,7 @@ class CountriesController < ApplicationController
     country = Country.create({
       country_name: params[:country_name],
       nuclear_power: nuclear_conversion,
-      military_power_rank: params[:military_power_rank]
+      military_power_rank: params[:military_power_rank].to_i
       })
 
     redirect_to '/countries'
