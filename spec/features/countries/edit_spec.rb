@@ -20,7 +20,7 @@ RSpec.describe 'artist#edit' do
     fill_in(:nuclear_power, with: "false")
     fill_in(:military_power_rank, with: "5")
 
-    click_button(:update_country)
+    click_button('Update Country')
 
     expect(current_path).to eq("/countries")
     expect(page).to have_content("The Unified Hobbiathan State")
