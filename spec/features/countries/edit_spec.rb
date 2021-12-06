@@ -22,7 +22,9 @@ RSpec.describe 'artist#edit' do
 
     click_button('Update Country')
 
-    expect(current_path).to eq("/countries")
+    save_and_open_page
+
+    expect(current_path).to eq('/countries')
     expect(page).to have_content("The Unified Hobbiathan State")
   end
 
