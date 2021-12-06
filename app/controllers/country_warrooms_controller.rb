@@ -17,8 +17,28 @@ class CountryWarroomsController < ApplicationController
   end
 
   def create
+
+    deadman = nil
+    wmd = nil
+
+    if params[:deadman_switch] == "true"
+      deadman = true
+    end
+
+    if params[:deadman_switch] == "false"
+      deadman = false
+    end
+
+    if params[:contains_wmd] == "true"
+      wmd = true
+    end
+
+    if params[:contains_wmd] == "false"
+      wmd = false
+    end
+
     current_country = Country.find(params[:id])
-    country_warroom = current_country.warrooms.create(warroom_name: params[:warroom_name], strategic_importance: params[:strategic_importance], deadman_switch: params[:deadman_switch], contains_wmd: params[:contains_wmd])
+    country_warroom = current_country.warrooms.create(warroom_name: params[:warroom_name], strategic_importance: params[:strategic_importance], deadman_switch: deadman, contains_wmd: wmd)
 
     redirect_to "/countries/#{current_country.id}/warrooms"
   end
