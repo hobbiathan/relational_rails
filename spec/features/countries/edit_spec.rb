@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'artist#edit' do
+RSpec.describe 'country#edit' do
   before(:each) do
     @country = Country.create!(country_name: "Hobbiathan State", military_power_rank: 5, nuclear_power: true)
   end
