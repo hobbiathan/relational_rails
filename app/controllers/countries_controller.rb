@@ -34,6 +34,18 @@ class CountriesController < ApplicationController
   end
 
   def edit
+    #binding.pry
+    @current_country = Country.find(params[:id])
+  end
 
+  def update
+    current_country = Country.find(params[:id])
+    current_country.update(country_params)
+
+    redirect_to "/countries/#{current_country.id}"
+  end
+
+  def country_params
+    params.permit(:country_name, :military_power_rank, :nuclear_power)
   end
 end
