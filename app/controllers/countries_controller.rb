@@ -32,4 +32,8 @@ class CountriesController < ApplicationController
 
     redirect_to '/countries'
   end
+
+  def edit
+
+  end
 end
