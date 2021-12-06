@@ -1,4 +1,4 @@
-<%= form_with url: "/countries/#{@current_country.id}", method: :put, local: true do |form| %>
+<%= form_with url: "/countries/#{@current_country.id}", method: :patch, local: true do |form| %>
 
 <%= form.label :country_name %> <br>
 <%= form.text_field :country_name %><br><br>
