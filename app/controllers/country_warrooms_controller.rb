@@ -42,8 +42,8 @@ class CountryWarroomsController < ApplicationController
 
     redirect_to "/countries/#{current_country.id}/warrooms"
   end
-
-  def country_warroom_params
-    params.permit(:warroom_name, :strategic_importance, :deadman_switch, :contains_wmd)
-  end
+  # 
+  # def country_warroom_params
+  #   params.permit(:warroom_name, :strategic_importance, :deadman_switch, :contains_wmd)
+  # end
 end
