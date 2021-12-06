@@ -9,7 +9,7 @@
 <h2> Country is nuclear power: <%=@current_country.nuclear_power%></h2>
 
 <h3>
-  <%= link_to "All Country Warrooms", "/countries/#{@current_country.id}/warrooms/new" %>
+  <%= link_to "All Country Warrooms", "/countries/#{@current_country.id}/warrooms" %>
 </h3>
 
 <% @warrooms.each do |warroom| %>
