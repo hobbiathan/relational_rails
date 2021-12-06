@@ -15,11 +15,15 @@ Rails.application.routes.draw do
   get '/countries/:id/edit', to: 'countries#edit'
 
   post '/countries', to: 'countries#create'
-
+  # Should be PATCH, doesn't make sense
   put '/countries/:id', to: 'countries#update'
 
+
+
   get '/countries/:id/warrooms', to: 'country_warrooms#index'
+  get '/countries/:id/warrooms/new', to: 'country_warrooms#new'
   get '/countries/:id/warrooms/:warroom_id', to: 'country_warrooms#show'
+  get '/countries/:id/warrooms/:warroom_id/edit', to: 'country_warrooms#edit'
 
   post '/countries/:id/warrooms', to: 'country_warrooms#create'
 
