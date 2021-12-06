@@ -33,4 +33,28 @@ RSpec.describe Boardgame do
       expect(Boardgame.alphabetical).to eq([@catan, @forge, @gloomhaven, @puerto])
     end
   end
+  describe '#alphabetical' do
+    it 'returns boardgames in alphabetical order' do
+      @riogrande = Company.create!(name: "Rio Grande", games_invented: 3, independent: false)
+      @puerto = @riogrande.boardgames.create!(name: 'Puerto Rico', rank: 13, out_of_print: true)
+      @catan = @riogrande.boardgames.create!(name: 'Catan', rank: 7, out_of_print: false)
+      @cephalofair = Company.create!(name: "Cephalofair", games_invented: 18, independent: true)
+      @gloomhaven = @cephalofair.boardgames.create!(name: 'Gloomhaven', rank: 239, out_of_print: false)
+      @forge = @cephalofair.boardgames.create!(name: 'Forgwar', rank: 89, out_of_print: true)
+
+      expect(Boardgame.alphabetical).to eq([@catan, @forge, @gloomhaven, @puerto])
+    end
+  end
+  describe '#limit_by_rank/1' do
+    it 'returns only the boardgames more than that ranks' do
+      @riogrande = Company.create!(name: "Rio Grande", games_invented: 3, independent: false)
+      @puerto = @riogrande.boardgames.create!(name: 'Puerto Rico', rank: 13, out_of_print: true)
+      @catan = @riogrande.boardgames.create!(name: 'Catan', rank: 7, out_of_print: false)
+      @cephalofair = Company.create!(name: "Cephalofair", games_invented: 18, independent: true)
+      @gloomhaven = @cephalofair.boardgames.create!(name: 'Gloomhaven', rank: 239, out_of_print: false)
+      @forge = @cephalofair.boardgames.create!(name: 'Forgwar', rank: 89, out_of_print: true)
+
+      expect(Boardgame.limit_by_rank(20)).to eq([@gloomhaven, @forge])
+    end
+  end
 end

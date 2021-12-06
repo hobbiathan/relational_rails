@@ -42,6 +42,13 @@ end
   end
   describe '#user limits rank' do
     it 'only returns the boardgames with that rank or more' do
+      visit "/companies/#{@riogrande.id}/boardgames"
+      within '.ranks' do
+        fill_in :rank, with: 10
+        click_button "Only Return Records with Lesser Rank than submited"
+      end
+      expect(page).to have_content('Puerto Rico')
+      expect(page).to_not have_content(@catan.name)
     end
-  end 
-end
+    end
+  end

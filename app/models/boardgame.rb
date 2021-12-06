@@ -10,4 +10,8 @@ class Boardgame < ApplicationRecord
   def self.alphabetical
     order(:name)
   end
+
+  def self.limit_by_rank(num)
+    where("rank > #{num}")
+  end
 end

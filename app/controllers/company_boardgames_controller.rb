@@ -4,6 +4,8 @@ class CompanyBoardgamesController < ApplicationController
     @boardgames = @company.boardgames
     if params[:order] == "name"
       @boardgames = @boardgames.alphabetical
+    elsif params[:rank].to_i > 0
+      @boardgames = @boardgames.limit_by_rank(params[:rank].to_i)
    end
   end
   def new
