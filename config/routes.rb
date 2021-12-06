@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get '/warrooms/:id', to: 'warrooms#show'
   get '/warrooms/:id/edit', to: 'warrooms#edit'
 
+  patch '/warrooms/:id', to: 'warrooms#update'
+
   # Note: Order of routes matters!
 
   get '/countries', to: 'countries#index'
