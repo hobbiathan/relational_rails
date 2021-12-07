@@ -1,14 +1,20 @@
 class CountryWarroomsController < ApplicationController
   def index
-    @current_country = Country.find(params[:id])
-    @warrooms = @current_country.warrooms
+    if params[:x] != "" || params[:x] != nil
+      @current_country = Country.find(params[:id])
+      @warrooms = @current_country.warrooms.importance_filter(params[:x])
+      #binding.pry
+    end
+
+    if params[:x] == "" || params[:x] == nil
+      @current_country = Country.find(params[:id])
+      @warrooms = @current_country.warrooms
+    end
   end
 
   def show
-    #binding.pry
-    @current_country = Country.find(params[:id])
-    @warroom = Warroom.find(params[:warroom_id])
-    #binding.pry
+      @current_country = Country.find(params[:id])
+      @warroom = Warroom.find(params[:warroom_id])
   end
 
   def new
