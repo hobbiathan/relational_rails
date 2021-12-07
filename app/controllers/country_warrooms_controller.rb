@@ -48,7 +48,7 @@ class CountryWarroomsController < ApplicationController
 
     warroom = Warroom.find(params[:warroom_id])
 
-    warroom.destroy 
+    warroom.destroy
 
     redirect_to "/countries/#{current_country.id}/warrooms"
   end
