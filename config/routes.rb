@@ -32,4 +32,6 @@ Rails.application.routes.draw do
 
   patch '/countries/:id/warrooms/:warroom_id', to: 'country_warrooms#update'
 
+  delete '/countries/:id/warrooms/:warroom_id', to: 'country_warrooms#destroy'
+
 end
