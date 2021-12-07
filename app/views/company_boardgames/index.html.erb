@@ -2,6 +2,7 @@
   <% @boardgames.each do |boardgame| %>
       <p><%= link_to boardgame.name, "/boardgames/#{boardgame.id}", id: "list" %></p>
       <p><%= link_to "Edit", "/boardgames/#{boardgame.id}/edit", id: "edit" %></p>
+      <%= button_to "Delete", "/boardgames/#{boardgame.id}", method: :delete, class: 'delete'%>
   <% end %>
   <%= form_with url: "/companies/#{@company.id}/boardgames?:rank", method: :get, local: true, class: 'ranks' do |f| %>
     <%= f.label :rank %>
@@ -9,7 +10,7 @@
     <%= f.submit "Only Return Records with Lesser Rank than submited" %>
   <% end %>
 <%= link_to "Add New Board Game", "/companies/#{@company.id}/boardgames/new" %>
-<p>Alphabetize:
+<p class = "alpha" >Alphabetize:
 <%= link_to "Alphabetize", "?order=name"%>
 </p>
 </div>

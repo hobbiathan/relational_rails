@@ -5,6 +5,7 @@
     <a href= <%= company_url(company) %>>
       <%= company.name %>
       <%= link_to "Edit", "/companies/#{company.id}/edit", id: "edit"%>
+      <%= button_to "Delete", "/companies/#{company.id}", method: :delete, class: "delete" %>
   </h3>
   </a>Created At: <%= company.created_at.httpdate %>
   <% end %>
