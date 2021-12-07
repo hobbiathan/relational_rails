@@ -20,7 +20,9 @@
 
   <h4>
     <%= link_to "#{warroom.warroom_name}", "/countries/#{warroom.country_id}/warrooms/#{warroom.id}" %>
-    <%= button_to "Edit #{warroom.warroom_name}", "/countries/#{warroom.country_id}/warrooms/:#{warroom.id}/edit", method: :get %>
+    <%= button_to "Edit #{warroom.warroom_name}", "/countries/#{warroom.country_id}/warrooms/#{warroom.id}/edit", method: :get %>
+    <%= button_to "Delete #{warroom.warroom_name}", "/countries/#{@current_country.id}/warrooms/#{warroom.id}", method: :delete %>
+
   </h4>
 
 <% end %>
