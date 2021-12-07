@@ -20,4 +20,17 @@ RSpec.describe 'countries#new' do
     expect(current_path).to eq("/countries")
     expect(page).to have_content("Switzerland")
   end
+
+  it 'can create a new country (is nuclear)' do
+    visit '/countries/new'
+
+    fill_in(:country_name, with: 'Switzerland')
+    fill_in(:military_power_rank, with: "2")
+    fill_in(:nuclear_power, with: "true")
+
+    click_button('Create Country')
+
+    expect(current_path).to eq("/countries")
+    expect(page).to have_content("Switzerland")
+  end
 end
