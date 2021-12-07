@@ -45,6 +45,7 @@ class CountriesController < ApplicationController
     redirect_to "/countries/#{current_country.id}"
   end
 
+  private
   def country_params
     params.permit(:country_name, :military_power_rank, :nuclear_power)
   end
