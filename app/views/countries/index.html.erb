@@ -13,6 +13,7 @@
 
    <%= link_to "#{country.country_name}", "/countries/#{country.id}" %> - Creation Date: <%= country.created_at %>
    <%= button_to "Edit #{country.country_name}", "/countries/#{country.id}/edit", method: :get %>
+   <%= button_to "Delete #{country.country_name}", "/countries/#{country.id}", method: :delete %>
 
 
  </h3>
