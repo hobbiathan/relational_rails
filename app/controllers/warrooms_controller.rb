@@ -23,6 +23,12 @@ class WarroomsController < ApplicationController
     redirect_to "/warrooms/#{current_warroom.id}"
   end
 
+  def destroy
+    warroom = Warroom.find(params[:id])
+    warroom.destroy
+    redirect_to '/warrooms'
+  end
+
   private
   def warroom_params
     params.permit(:warroom_name, :strategic_importance, :deadman_switch, :contains_wmd)
