@@ -1,6 +1,10 @@
 class WarroomsController < ApplicationController
   def index
-    @warrooms = Warroom.all
+    if params["order"] == "warroom_name"
+      @warrooms = Warroom.all.has_wmds.order(warroom_name: :asc)
+    else
+      @warrooms = Warroom.all.has_wmds
+    end
   end
 
   def show
