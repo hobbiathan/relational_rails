@@ -2,6 +2,9 @@
 <h4>
   <%= link_to "Countries Index", "/countries" %>
 </h4>
+<h4>
+  <%= button_to "Delete #{@current_country.country_name}", "/countries/#{@current_country.id}", method: :delete %>
+</h4>
 
 <%= button_to "Edit #{@current_country.country_name}", "/countries/#{@current_country.id}/edit", method: :get %> <br><br>
 <h1> <%= @current_country.country_name %> </h1>
