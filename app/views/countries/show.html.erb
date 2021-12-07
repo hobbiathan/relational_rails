@@ -3,6 +3,7 @@
   <%= link_to "Countries Index", "/countries" %>
 </h4>
 
+<%= button_to "Edit #{@current_country.country_name}", "/countries/#{@current_country.id}/edit", method: :get %> <br><br>
 <h1> <%= @current_country.country_name %> </h1>
 <h2> Total Warroom Count: <%=@current_country.child_count%></h2>
 <h2> Military Power Rank: <%=@current_country.military_power_rank%>/5</h2>
@@ -16,8 +17,8 @@
 
   <h4>
     <%= link_to "#{warroom.warroom_name}", "/countries/#{warroom.country_id}/warrooms/#{warroom.id}" %>
+    <%= button_to "Edit #{warroom.warroom_name}", "/countries/#{warroom.country_id}/warrooms/:#{warroom.id}/edit", method: :get %>
+
   </h4>
 
 <% end %>
-
-<%= button_to "Edit #{@current_country.country_name}", "/countries/#{@current_country.id}/edit", method: :get %> <br><br>
