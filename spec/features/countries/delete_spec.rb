@@ -9,7 +9,7 @@ RSpec.describe 'countries#destroy' do
     visit "/countries/#{@country.id}"
 
     click_button("Delete #{@country.country_name}")
-
+    binding.pry
     expect(current_path).to eq('/countries')
     expect(page).to_not have_content("The Velviathan")
   end
