@@ -8,6 +8,15 @@
   <%= button_to "Create Warroom", "/countries/#{@current_country.id}/warrooms/new", method: :get %>
 </h4>
 
+<%= form_with url: "?order=threshold", method: 'GET', local: true do |form| %>
+
+  <%= form.label :x %> <br>
+  <%= form.text_field :x %><br><br>
+
+  <%= form.submit "Only return records with #{:x} of strategic importance"%>
+
+<% end %>
+
 <h1>
 <%=@current_country.country_name%> Warrooms
 <h1>
