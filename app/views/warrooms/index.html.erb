@@ -2,7 +2,11 @@
   <%= link_to "Return to Countries", "/countries" %>
 </h4>
 
+<%= link_to "Order by Name", "?order=warroom_name"%>
+
+
 <h1>All Warrooms</h1>
+<p>Display only warrooms that contain WMDs</p>
 
 <% @warrooms.each do |warroom| %>
 
