@@ -1,5 +1,5 @@
 class Country < ApplicationRecord
-  has_many :warrooms
+  has_many :warrooms, :dependent => :destroy
 
   def self.desc_order
     order(created_at: :desc)
