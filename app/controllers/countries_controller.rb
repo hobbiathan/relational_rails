@@ -45,6 +45,12 @@ class CountriesController < ApplicationController
     redirect_to "/countries/#{current_country.id}"
   end
 
+  def destroy
+    country = Country.find(params[:id])
+    country.destroy
+    redirect_to '/countries'
+  end
+
   private
   def country_params
     params.permit(:country_name, :military_power_rank, :nuclear_power)
