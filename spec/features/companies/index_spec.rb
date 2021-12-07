@@ -78,4 +78,18 @@ end
       end
     end
   end
+    it 'has a button next to every company to delete that company' do
+      @riogrande = Company.create!(name: "Rio Grande", games_invented: 42, independent: false)
+      @emperors = Company.create!(name: "Emporors", games_invented: 7, independent: true)
+      visit '/companies'
+
+      find('.delete') do
+      first(:button, "Delete").click
+      end
+      expect(page).to_not have_content(@emperors.name)
+      find('.delete') do
+      first(:button, "Delete").click
+      expect(page).to_not have_content(@riogrande.name)
+    end
+  end
 end
