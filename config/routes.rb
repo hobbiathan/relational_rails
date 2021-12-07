@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   # Should be PATCH, doesn't make sense
   patch '/countries/:id', to: 'countries#update'
 
-
+  delete '/countries/:id', to: 'countries#destroy'
 
   get '/countries/:id/warrooms', to: 'country_warrooms#index'
   get '/countries/:id/warrooms/new', to: 'country_warrooms#new'
