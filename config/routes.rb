@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   patch '/warrooms/:id', to: 'warrooms#update'
 
+  delete '/warrooms/:id', to: 'warrooms#destroy'
+
   # Note: Order of routes matters!
 
   get '/countries', to: 'countries#index'
