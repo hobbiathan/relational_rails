@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 2021_12_02_123853) do
     t.integer "military_power_rank"
     t.string "country_name"
     t.boolean "nuclear_power"
-    t.date "created_at"
-    t.date "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "warrooms", force: :cascade do |t|

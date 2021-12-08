@@ -70,7 +70,7 @@ RSpec.describe 'countries' do
     fill_in(:x, with: "4")
     click_button("Only return records of or greater than x of strategic importance")
 
-    save_and_open_page
+    
 
     expect(page).to_not have_content("Sector 2C")
   end
