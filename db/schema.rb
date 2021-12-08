@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_02_005230) do
+ActiveRecord::Schema.define(version: 2021_12_02_123853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,5 +33,25 @@ ActiveRecord::Schema.define(version: 2021_12_02_005230) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "countries", force: :cascade do |t|
+    t.integer "military_power_rank"
+    t.string "country_name"
+    t.boolean "nuclear_power"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "warrooms", force: :cascade do |t|
+    t.integer "strategic_importance"
+    t.string "warroom_name"
+    t.boolean "deadman_switch"
+    t.boolean "contains_wmd"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "country_id"
+    t.index ["country_id"], name: "index_warrooms_on_country_id"
+  end
+
   add_foreign_key "boardgames", "companies"
+  add_foreign_key "warrooms", "countries"
 end

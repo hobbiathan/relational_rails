@@ -4,7 +4,36 @@ Rails.application.routes.draw do
   get '/', to: 'welcome#index'
 
   # Index (User story 1)
-  get '/wargames', to: 'wargames#index'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   get '/companies', to: 'companies#index'
 
   get '/companies/new', to: 'companies#new'
@@ -15,7 +44,7 @@ Rails.application.routes.draw do
   get '/companies/:id/edit', to: 'companies#edit'
   patch '/companies/:id', to: 'companies#update'
   delete '/companies/:id', to: 'companies#destroy'
-  get '/warrooms', to: 'warrooms#index'
+
   get '/boardgames', to: 'boardgames#index'
   get '/wargames/:id', to: 'wargames#show'
 
@@ -25,7 +54,7 @@ Rails.application.routes.draw do
   patch '/boardgames/:id', to: 'boardgames#update', as: "boardgame"
 
   delete '/boardgames/:id', to: 'boardgames#destroy'
-  get '/wargames/:id/warrooms', to: 'wargames#index'
+
   get '/companies/:company_id/boardgames', to: 'company_boardgames#index'
   get '/companies/:company_id/boardgames/new', to: 'company_boardgames#new'
   post '/companies/:company_id/boardgames', to: 'company_boardgames#create'
