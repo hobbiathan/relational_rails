@@ -1,15 +1,14 @@
 class CountryWarroomsController < ApplicationController
   def index
-    if params[:x] != "" || params[:x] != nil
+    if params["order"] == "warroom_name"
       @current_country = Country.find(params[:id])
-      @warrooms = @current_country.warrooms.importance_filter(params[:x])
       #binding.pry
+      @warrooms = @current_country.warrooms.all.order(warroom_name: :asc)
+    else
+      @current_country = Country.find(params[:id])
+      @warrooms = @current_country.warrooms.all
     end
 
-    if params[:x] == "" || params[:x] == nil
-      @current_country = Country.find(params[:id])
-      @warrooms = @current_country.warrooms
-    end
   end
 
   def show
@@ -20,6 +19,21 @@ class CountryWarroomsController < ApplicationController
   def new
     #binding.pry
     @current_country = Country.find(params[:id])
+  end
+
+  def edit
+    #binding.pry
+    @current_country = Country.find(params[:id])
+    @current_warroom = Warroom.find(params[:warroom_id])
+  end
+
+  def update
+    #binding.pry
+    current_country = Country.find(params[:id])
+    current_warroom = Warroom.find(params[:warroom_id])
+    current_warroom.update(warroom_params)
+
+    redirect_to "/countries/#{current_country.id}/warrooms/#{current_warroom.id}"
   end
 
   def create
@@ -59,4 +73,9 @@ class CountryWarroomsController < ApplicationController
     redirect_to "/countries/#{current_country.id}/warrooms"
   end
 
+
+  private
+  def warroom_params
+    params.permit(:warroom_name, :strategic_importance, :deadman_switch, :contains_wmd)
+  end
 end
