@@ -4,9 +4,14 @@ class CountryWarroomsController < ApplicationController
       @current_country = Country.find(params[:id])
       #binding.pry
       @warrooms = @current_country.warrooms.all.order(warroom_name: :asc)
+
     else
       @current_country = Country.find(params[:id])
       @warrooms = @current_country.warrooms.all
+    end
+
+    if params[:x] == "1" || params[:x] == "2" || params[:x] == "3" || params[:x] == "4" || params[:x] == "5"
+      @warrooms = @current_country.warrooms.importance_filter(params[:x])
     end
 
   end
