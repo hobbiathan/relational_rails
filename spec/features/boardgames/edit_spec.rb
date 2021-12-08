@@ -28,7 +28,6 @@ RSpec.describe 'Update boardgame with new Data' do
     within '.update-boardgame' do
       find(".name", visible: true).set "Puerto Rico"
       find(".rank", visible: true).set 233
-      find_button(:out_of_print :true).click
       click_button 'Submit Update'
     end
     expect(current_path).to eq("/boardgames/#{@puerto.id}")
