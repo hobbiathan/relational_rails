@@ -1,0 +1,17 @@
+<%= form_with url: "/countries/#{@current_country.id}/warrooms/#{@current_warroom.id}", method: :patch, local: true do |form| %>
+
+<%= form.label :warroom_name %> <br>
+<%= form.text_field :warroom_name %><br><br>
+
+<%= form.label :strategic_importance %> <br>
+<%= form.text_field :strategic_importance %><br><br>
+
+<%= form.label :deadman_switch %><br>
+<%= form.text_field :deadman_switch %><br><br>
+
+<%= form.label :contains_wmd %><br>
+<%= form.text_field :contains_wmd %><br><br>
+
+<%= form.submit "Update #{@current_warroom.warroom_name}" %>
+
+<% end %>
