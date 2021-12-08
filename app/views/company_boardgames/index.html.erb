@@ -1,6 +1,9 @@
 <div class = "boardgames-list">
   <% @boardgames.each do |boardgame| %>
-      <p><%= link_to boardgame.name, "/boardgames/#{boardgame.id}", id: "list" %></p>
+      <p>name: <%= link_to boardgame.name, "/boardgames/#{boardgame.id}", id: "list" %></p>
+      <p>rank: <%= boardgame.rank %></p>
+      <p>out_of_print: <%= boardgame.out_of_print %></p>
+
       <p><%= link_to "Edit", "/boardgames/#{boardgame.id}/edit", id: "edit" %></p>
       <%= button_to "Delete", "/boardgames/#{boardgame.id}", method: :delete, class: 'delete'%>
   <% end %>

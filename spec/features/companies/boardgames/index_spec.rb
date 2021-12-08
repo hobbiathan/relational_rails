@@ -9,8 +9,13 @@ RSpec.describe 'Companies boardgames index' do
     #user story 5
     visit "/companies/#{@riogrande.id}/boardgames"
     within '.boardgames-list' do
-      expect(page).to have_content(@puerto.name)
-      expect(page).to have_content(@catan.name)
+      expect(page).to have_content("rank: #{@puerto.rank}")
+      expect(page).to have_content("name: #{@puerto.name}")
+      expect(page).to have_content("out_of_print: #{@puerto.out_of_print}")
+      expect(page).to have_content("rank: #{@catan.rank}")
+      expect(page).to have_content("name: #{@catan.name}")
+      expect(page).to have_content("out_of_print: #{@catan.out_of_print}")
+
     end
   end
   it 'links to each boardgames show page' do
