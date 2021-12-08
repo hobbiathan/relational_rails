@@ -6,6 +6,7 @@ RSpec.describe 'countries' do
     @country = Country.create!(military_power_rank: 5, country_name: "The Velviathan", nuclear_power: true)
     @country_two = Country.create!(military_power_rank: 4, country_name: "The State of Hobbiathan", nuclear_power: true)
     @wr = @country.warrooms.create!(strategic_importance: 5, warroom_name: "Sector 2B", deadman_switch: true, contains_wmd: true)
+    @wr_2 = @country.warrooms.create!(strategic_importance: 3, warroom_name: "Sector 2C", deadman_switch: true, contains_wmd: true)
 
     visit "/countries"
   end
@@ -61,6 +62,17 @@ RSpec.describe 'countries' do
     expect(page).to have_content("4")
     expect(page).to have_content("true")
     expect(page).to have_content("false")
+  end
+
+  it 'can show warrooms above or at a specific strategic importance' do
+    visit "/countries/#{@country.id}/warrooms"
+
+    fill_in(:x, with: "4")
+    click_button("Only return records of or greater than x of strategic importance")
+
+    save_and_open_page
+
+    expect(page).to_not have_content("Sector 2C")
   end
 
 end
