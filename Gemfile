@@ -40,8 +40,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'simplecov'
   gem 'capybara'
-  gem 'launchy'
-  gem 'shoulda-matchers', '~> 4.0'
+  gem 'launchy' #save and open page
+  gem 'shoulda-matchers', '~> 5.0'
 end
 
 group :development do

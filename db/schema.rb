@@ -15,6 +15,24 @@ ActiveRecord::Schema.define(version: 2021_12_02_123853) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "boardgames", force: :cascade do |t|
+    t.string "name"
+    t.integer "rank"
+    t.boolean "out_of_print"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "company_id"
+    t.index ["company_id"], name: "index_boardgames_on_company_id"
+  end
+
+  create_table "companies", force: :cascade do |t|
+    t.string "name"
+    t.integer "games_invented"
+    t.boolean "independent"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "countries", force: :cascade do |t|
     t.integer "military_power_rank"
     t.string "country_name"
@@ -33,6 +51,9 @@ ActiveRecord::Schema.define(version: 2021_12_02_123853) do
     t.bigint "country_id"
     t.index ["country_id"], name: "index_warrooms_on_country_id"
   end
+
+
+  add_foreign_key "boardgames", "companies"
 
   add_foreign_key "warrooms", "countries"
 end

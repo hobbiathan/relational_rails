@@ -1,0 +1,17 @@
+<p class = "boardgames"><a href="/boardgames">Board Games Link</a></p>
+<p class = "company-index"><a href="/companies">Company Index</a></p>
+
+<h1><%= @company.name %></h1>
+<div class = "company-show">
+<p>Independent: <%= @company.independent %></p>
+<p>Number Of Games Invented: <%= @company.games_invented %></p>
+<p>Created on: <%= @company.created_at.httpdate %></p>
+<p>Updated on: <%= @company.updated_at.httpdate %></p>
+<p>Total Board Games in Database: <%= @company.boardgame_count %></p>
+</div>
+<%= button_to "Delete Company", "#{@company.id}", method: :delete %>
+<p class= "parent-edit"><a href="/companies/<%= @company.id %>/edit">Update Company</a></p>
+<p class="child-games"><a href="/companies/<%= @company.id %>/boardgames"><%= @company.name%>'s boardgames</a><p>
+
+
+<!-- <p><a href = "/boardgames"> List of all boardgames</a></p> -->

@@ -1,0 +1,21 @@
+<%= link_to 'Companies Home', '/companies', class: 'comp' %>
+
+<div class = "boardgames-list">
+<h1> Boardgames List </h1>
+<% @boardgames.games_sold_out.each do |boardgame| %>
+
+  <h3>
+    <a href = "/boardgames/<%=boardgame.id%>">
+      <%= boardgame.name %></a>
+
+    <a href="/boardgames/<%=boardgame.id%>/edit">
+      <%= "Edit" %> </a>
+  </h3>
+  <%= button_to "Delete", "/boardgames/#{boardgame.id}", method: :delete, class: 'delete'%>
+  <p>Rank: <%= boardgame.rank %></p>
+  <p>Out of Print: <%= boardgame.out_of_print %></p>
+  <p>Created on: <%= boardgame.created_at.httpdate %></p>
+  <p>Updated on: <%= boardgame.updated_at.httpdate %></p>
+
+<% end %>
+</div>

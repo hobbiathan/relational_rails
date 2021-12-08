@@ -1,0 +1,16 @@
+<%= link_to 'Companies Home', '/companies', class: 'comp' %>
+<div class = "boardgames-list">
+<h1><%= @boardgame.name %></h1>
+
+<p>Out of print:<%= @boardgame.out_of_print %></p>
+<p>Rank:<%= @boardgame.rank %></p>
+
+<p>created on:<%= @boardgame.created_at.httpdate %></p>
+<p>updated on:<%= @boardgame.updated_at.httpdate %></p>
+
+</div>
+<%= button_to "Delete Board Game", "#{@boardgame.id}", method: :delete %>
+<%= link_to "Update Board Game", "#{@boardgame.id}/edit" %>
+
+
+<p><a href = "/boardgames"> List of all boardgames</a></p>

@@ -1,0 +1,15 @@
+
+<h1>Create New Company</h1>
+
+<%= form_with model: @company, url: '/companies', method: :post, local: true, :class => 'new-company'  do |f| %>
+  <p>Company Name</p>
+  <%= f.text_field :name %>
+  <p>Games Invented</p>
+  <%= f.text_field :games_invented %>
+  <p>Independent</p>
+  <%= f.select :independent, options_for_select([true,false])%>
+
+  <p><%= f.submit "Create Company" %></p>
+
+
+<% end %>
