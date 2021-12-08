@@ -40,6 +40,7 @@
   <h5>Contains WMDs:</h5>
   <h6><%=warroom.contains_wmd%></h6>
 
+  <%= button_to "Edit #{warroom.warroom_name}", "/countries/#{@current_country.id}/warrooms/#{warroom.id}/edit", method: :get %>
   <%= button_to "Delete #{warroom.warroom_name}", "/countries/#{@current_country.id}/warrooms/#{warroom.id}", method: :delete %>
 
 <% end %>
