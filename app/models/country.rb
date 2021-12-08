@@ -1,4 +1,6 @@
 class Country < ApplicationRecord
+  validates :country_name, presence: true
+
   has_many :warrooms, :dependent => :destroy
 
   def self.desc_order

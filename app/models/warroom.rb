@@ -1,5 +1,6 @@
 class Warroom < ApplicationRecord
   belongs_to :country
+  validates :warroom_name, presence: true
 
   def self.has_wmds
     where("contains_wmd = true")
