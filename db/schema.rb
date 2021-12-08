@@ -52,6 +52,8 @@ ActiveRecord::Schema.define(version: 2021_12_02_123853) do
     t.index ["country_id"], name: "index_warrooms_on_country_id"
   end
 
+
   add_foreign_key "boardgames", "companies"
+
   add_foreign_key "warrooms", "countries"
 end

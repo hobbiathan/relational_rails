@@ -1,0 +1,14 @@
+<%= form_with url: "/countries/#{@current_country.id}", method: :patch, local: true do |form| %>
+
+<%= form.label :country_name %> <br>
+<%= form.text_field :country_name %><br><br>
+
+<%= form.label :military_power_rank %> <br>
+<%= form.text_field :military_power_rank %><br><br>
+
+<%= form.label :nuclear_power %><br>
+<%= form.text_field :nuclear_power %><br><br>
+
+<%= form.submit 'Update Country' %>
+
+<% end %>

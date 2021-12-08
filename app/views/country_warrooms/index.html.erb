@@ -1,0 +1,46 @@
+<h4>
+  <a href="/countries/<%= @current_country.id %>">
+    Return to Country
+  </a>
+</h4>
+
+<h4>
+  <%= button_to "Create Warroom", "/countries/#{@current_country.id}/warrooms/new", method: :get %>
+</h4>
+
+<%= link_to "Order by Name", "?order=warroom_name" %>
+
+
+<%= form_with url: "?order=threshold", method: 'GET', local: true do |form| %>
+
+  <%= form.label :x %> <br>
+  <%= form.text_field :x %><br><br>
+
+  <%= form.submit "Only return records of or greater than #{:x} of strategic importance"%>
+
+<% end %>
+
+<h1>
+<%=@current_country.country_name%> Warrooms
+<h1>
+
+<% @warrooms.each do |warroom| %>
+  <h4>
+    <a href="warrooms/<%=warroom.id%>">
+    <%= warroom.warroom_name %>
+    </a>
+  <h4>
+
+  <h5>Strategic Importance:</h5>
+  <h6><%=warroom.strategic_importance%>/5</h6>
+
+  <h5>Contains Deadman's Switch:</h5>
+  <h6><%=warroom.deadman_switch%><h6>
+
+  <h5>Contains WMDs:</h5>
+  <h6><%=warroom.contains_wmd%></h6>
+
+  <%= button_to "Edit #{warroom.warroom_name}", "/countries/#{@current_country.id}/warrooms/#{warroom.id}/edit", method: :get %>
+  <%= button_to "Delete #{warroom.warroom_name}", "/countries/#{@current_country.id}/warrooms/#{warroom.id}", method: :delete %>
+
+<% end %>

@@ -1,0 +1,20 @@
+<h4>
+  <%= link_to "All Warrooms", "/warrooms" %>
+</h4>
+
+<h4>
+  <%= link_to "Create Country", "/countries/new" %>
+</h4>
+
+<h1>Countries</h1>
+
+<% @countries.each do |country| %>
+ <h3>
+
+   <%= link_to "#{country.country_name}", "/countries/#{country.id}" %> - Creation Date: <%= country.created_at %>
+   <%= button_to "Edit #{country.country_name}", "/countries/#{country.id}/edit", method: :get %>
+   <%= button_to "Delete #{country.country_name}", "/countries/#{country.id}", method: :delete %>
+
+
+ </h3>
+<% end %>

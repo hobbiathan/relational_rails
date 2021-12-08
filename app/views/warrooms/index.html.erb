@@ -1,0 +1,24 @@
+<h4>
+  <%= link_to "Return to Countries", "/countries" %>
+</h4>
+
+<%= link_to "Order by Name", "?order=warroom_name"%>
+
+
+<h1>All Warrooms</h1>
+<p>Display only warrooms that contain WMDs</p>
+
+<% @warrooms.each do |warroom| %>
+
+  <h2><a href="/warrooms/<%=warroom.id%>"><%=warroom.warroom_name%></a><h2>
+    <h3>Warroom ID: <%=warroom.id%></h3>
+    <h3>Warroom Strategic Importance: <%=warroom.strategic_importance%></h3>
+    <h3>Warroom Contains Deadman's Switch: <%=warroom.deadman_switch%></h3>
+    <h3>Warroom Contains WMDs: <%=warroom.contains_wmd%></h3>
+    <h3>Warroom Created At: <%=warroom.created_at%></h3>
+    <h3>Warroom Updated At: <%=warroom.updated_at%></h3>
+    <h3>Warroom Country ID: <%= link_to "#{warroom.country_id}", "/countries/#{warroom.country_id}"%></h3>
+    <%= button_to "Edit #{warroom.warroom_name}", "/warrooms/#{warroom.id}/edit", method: :get %>
+    <%= button_to "Delete #{warroom.warroom_name}", "/warrooms/#{warroom.id}", method: :delete %>
+
+<% end %>

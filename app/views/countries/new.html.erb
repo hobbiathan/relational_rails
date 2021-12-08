@@ -1,0 +1,14 @@
+<%= form_with url: "/countries", method: 'POST', local: true do |form| %>
+
+  <%= form.label :country_name %> <br>
+  <%= form.text_field :country_name %><br><br>
+
+  <%= form.label :military_power_rank %> <br>
+  <%= form.text_field :military_power_rank %><br><br>
+
+  <%= form.label :nuclear_power %><br>
+  <%= form.text_field :nuclear_power %><br><br>
+
+  <%= form.submit "Create Country"%>
+
+<% end %>
