@@ -4,20 +4,36 @@ Rails.application.routes.draw do
   get '/', to: 'welcome#index'
 
   # Index (User story 1)
-  get '/wargames', to: 'wargames#index'
-  get '/boardgames', to: 'boardgames#index'
-
-  # Specific parent in index
-  get '/wargames/:id', to: 'wargames#show'
-  get '/boardgames/:id', to: 'boardgames#show'
-
   get '/warrooms', to: 'warrooms#index'
-  get '/boardgames', to: 'boardgames#index'
+  get '/warrooms/:id', to: 'warrooms#show'
+  get '/warrooms/:id/edit', to: 'warrooms#edit'
 
-  get '/wargames/:id', to: 'wargames#show'
-  get '/boardgames/:id', to: 'boardgames#show'
+  patch '/warrooms/:id', to: 'warrooms#update'
 
-  get '/wargames/:id/warrooms', to: 'wargames#index'
-  get '/boardgames/:id/boardgames', to: 'boardgames#index'
+  delete '/warrooms/:id', to: 'warrooms#destroy'
+
+  # Note: Order of routes matters!
+
+  get '/countries', to: 'countries#index'
+  get '/countries/new', to: 'countries#new'
+  get '/countries/:id', to: 'countries#show'
+  get '/countries/:id/edit', to: 'countries#edit'
+
+  post '/countries', to: 'countries#create'
+  # Should be PATCH, doesn't make sense
+  patch '/countries/:id', to: 'countries#update'
+
+  delete '/countries/:id', to: 'countries#destroy'
+
+  get '/countries/:id/warrooms', to: 'country_warrooms#index'
+  get '/countries/:id/warrooms/new', to: 'country_warrooms#new'
+  get '/countries/:id/warrooms/:warroom_id', to: 'country_warrooms#show'
+  get '/countries/:id/warrooms/:warroom_id/edit', to: 'country_warrooms#edit'
+
+  post '/countries/:id/warrooms', to: 'country_warrooms#create'
+
+  patch '/countries/:id/warrooms/:warroom_id', to: 'country_warrooms#update'
+
+  delete '/countries/:id/warrooms/:warroom_id', to: 'country_warrooms#destroy'
 
 end
