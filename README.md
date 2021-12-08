@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## General Database Structuring
 
-Things you may want to cover:
 
-* Ruby version
+#### War Games
 
-* System dependencies
+The War Games directory had a relatively simple setup.
 
-* Configuration
+The Parent table was known as 'Countries', which consisted of a Unique ID, an integer military power rank, and a boolean nuclear power,
+as shown below:
 
-* Database creation
+[image of thing]
 
-* Database initialization
+The Child table was known as 'WarRooms', of which consisted of a primary key `id`, a foreign key `country_id`, an integer `strategic_importance`,
+a string `warroom_name`, and two booleans, `deadman_switch` and `contains_wmd`, respectively:
 
-* How to run the test suite
+[image of child]
 
-* Services (job queues, cache servers, search engines, etc.)
+The Parent-Child relationship is as such:
 
-* Deployment instructions
+[image of parent-child relationship schema]
 
-* ...
+
+#### Companies
