@@ -1,5 +1,5 @@
 
-<%= form_with url: "/companies/#{@company.id}", method: :patch, local: true, :class => 'new-company'  do |f| %>
+<%= form_with url: "/companies/#{@company.id}", method: :patch, local: true, :class => 'update-company'  do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :games_invented %>

@@ -10,18 +10,20 @@ Rails.application.routes.draw do
   get '/companies/new', to: 'companies#new'
   post '/companies', to: 'companies#create'
   # Specific parent in index
-  get '/wargames/:id', to: 'wargames#show'
+
   get '/companies/:id', to: 'companies#show', as: :company
   get '/companies/:id/edit', to: 'companies#edit'
   patch '/companies/:id', to: 'companies#update'
   delete '/companies/:id', to: 'companies#destroy'
   get '/warrooms', to: 'warrooms#index'
   get '/boardgames', to: 'boardgames#index'
-
   get '/wargames/:id', to: 'wargames#show'
+
   get '/boardgames/:id', to: 'boardgames#show'
+
   get '/boardgames/:id/edit', to: 'boardgames#edit'
-  patch '/boardgames/:id', to: 'boardgames#update'
+  patch '/boardgames/:id', to: 'boardgames#update', as: "boardgame"
+
   delete '/boardgames/:id', to: 'boardgames#destroy'
   get '/wargames/:id/warrooms', to: 'wargames#index'
   get '/companies/:company_id/boardgames', to: 'company_boardgames#index'

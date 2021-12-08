@@ -1,7 +1,7 @@
 require 'rails_helper'
 RSpec.describe 'Companies boardgames index' do
   before :each do
-    @riogrande = Company.create!(name: "Rio Grande")
+    @riogrande = Company.create!(name: "Rio Grande", games_invented: 1102)
     @puerto = @riogrande.boardgames.create!(name: 'Puerto Rico', rank: 13, out_of_print: true)
     @catan = @riogrande.boardgames.create!(name: 'Catan', rank: 2, out_of_print: true)
   end

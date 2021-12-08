@@ -1,6 +1,8 @@
 class Boardgame < ApplicationRecord
   validates :name, presence: true
   validates :rank, presence: true
+  validates :rank, length: { maximum: 30}
+  validates :rank, numericality: { only_integer: true}
   belongs_to :company
 
   def self.games_sold_out

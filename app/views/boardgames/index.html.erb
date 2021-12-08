@@ -5,10 +5,10 @@
 <% @boardgames.games_sold_out.each do |boardgame| %>
 
   <h3>
-    <a href = boardgame_path(boardgame)>
+    <a href = "/boardgames/<%=boardgame.id%>">
       <%= boardgame.name %></a>
 
-    <a href="/boardgames/<%= boardgame.id %>/edit">
+    <a href="/boardgames/<%=boardgame.id%>/edit">
       <%= "Edit" %> </a>
   </h3>
   <%= button_to "Delete", "/boardgames/#{boardgame.id}", method: :delete, class: 'delete'%>

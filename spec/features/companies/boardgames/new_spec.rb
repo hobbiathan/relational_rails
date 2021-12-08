@@ -13,7 +13,7 @@
 require 'rails_helper'
 RSpec.describe 'creating a boardgame' do
     it 'links to the new page from the boardgames index' do
-      riogrande = Company.create!(name: 'Riogrande')
+      riogrande = Company.create!(name: 'Riogrande', games_invented: 192)
 
       visit "/companies/#{riogrande.id}/boardgames"
 
@@ -22,7 +22,7 @@ RSpec.describe 'creating a boardgame' do
       expect(current_path).to eq("/companies/#{riogrande.id}/boardgames/new")
     end
     it 'creates a new boardgame with a form' do
-      riogrande = Company.create!(name: 'Riogrande')
+      riogrande = Company.create!(name: 'Riogrande', games_invented:192)
       visit "/companies/#{riogrande.id}/boardgames"
       click_link 'Add New Board Game'
        within ".new-boardgame" do
@@ -41,7 +41,7 @@ RSpec.describe 'creating a boardgame' do
   end
 
     it 'doesnt save boardgame without a name' do
-      riogrande = Company.create!(name: 'Riogrande')
+      riogrande = Company.create!(name: 'Riogrande', games_invented: 2334)
       visit "/companies/#{riogrande.id}/boardgames"
       click_link 'Add New Board Game'
       within ".new-boardgame" do
@@ -57,7 +57,7 @@ RSpec.describe 'creating a boardgame' do
   end
 
     it 'doesnt save boardgame without rank' do
-      riogrande = Company.create!(name: 'Riogrande')
+      riogrande = Company.create!(name: 'Riogrande', games_invented: 102)
       visit "/companies/#{riogrande.id}/boardgames"
       click_link 'Add New Board Game'
        within ".new-boardgame" do
@@ -70,4 +70,4 @@ RSpec.describe 'creating a boardgame' do
       expect(Boardgame.all.length).to eq(0)
     end
   end
-end 
+end
