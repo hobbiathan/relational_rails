@@ -9,7 +9,7 @@ class CountryWarroomsController < ApplicationController
       @current_country = Country.find(params[:id])
       @warrooms = @current_country.warrooms.all
     end
-
+    # Edge case - filtering and sorting by names
     if params[:x] == "1" || params[:x] == "2" || params[:x] == "3" || params[:x] == "4" || params[:x] == "5"
       @warrooms = @current_country.warrooms.importance_filter(params[:x])
     end
